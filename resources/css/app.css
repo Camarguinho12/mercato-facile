@@ -6,3 +6,20 @@
 :root{
 	font-family: "Madimi One", sans-serif;
 }
+
+.main-color-1{
+	color: rgb(0, 119, 130);
+}
+
+.main-color-2{
+	color: #13c1ac;
+}
+
+.main-bg-color-1{
+	background-color: rgb(0, 119, 130);
+}
+
+.main-bg-color-2{
+	background-color: #13c1ac;
+}
+
