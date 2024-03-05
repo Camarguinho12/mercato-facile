@@ -1,3 +1,5 @@
 <x-layouts.app>
-    <h1 class="text-8xl">Hello world</h1>
+   <main class="container mx-auto flex">
+    <img src="{{asset('images/business-people.jpg')}}" alt="img">
+   </main>
 </x-layouts.app>
