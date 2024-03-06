@@ -1,5 +1,6 @@
 <?php
 
+use App\Providers\RouteServiceProvider;
 use Laravel\Fortify\Features;
 
 return [
@@ -73,7 +74,8 @@ return [
     |
     */
 
-    'home' => '/home',
+    //'home' => '/home',
+    'home' => RouteServiceProvider::HOME,
 
     /*
     |--------------------------------------------------------------------------
@@ -153,6 +155,7 @@ return [
         //    'confirm' => true,
         //    'confirmPassword' => true,
         //    // 'window' => 0,
+        //,
         //]),
     ],
 
