@@ -7,8 +7,7 @@ use Illuminate\Http\Request;
 class HomepageController extends Controller
 {
     public function homepage () {
-        return view('w
-        elcome');
+        return view('welcome');
     }
 
     public function dashboard () {
