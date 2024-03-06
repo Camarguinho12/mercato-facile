@@ -15,7 +15,7 @@
                 @csrf
 
                 <div class="mb-2">
-                    <a href="#"><i class="fa-solid fa-house text-2xl"></i></a>
+                    <a href="{{route('homepage')}}"><i class="fa-solid fa-house text-2xl"></i></a>
                 </div>
 
                 <div class="flex flex-col items-center justify-center">

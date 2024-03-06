@@ -11,7 +11,7 @@
 					<p>Categoria: {{$product->category}}</p>
 					<p>Prezzo: {{$product->price}}</p> 
 					
-                     <p>Descrizione: {{$product->about}}</p>
+                    <p>Descrizione: {{$product->about}}</p>
 					<hr> 
 				</div>
 			</div>

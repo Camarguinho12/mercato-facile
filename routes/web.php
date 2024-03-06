@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomepageController::class,'homepage'])->name('homepage');
-Route::get('/dashboard', Dashboard::class)->name('dashboard');
+Route::get('/dashboard', [HomepageController::class, 'dashboard'])->name('dashboard')->middleware('auth');
 Route::get('/create', [HomepageController::class,'create'])->name('create');
 Route::get('/edit', [HomepageController::class,'edit'])->name('edit');
 Route::get('/show', [HomepageController::class,'show'])->name('show');
