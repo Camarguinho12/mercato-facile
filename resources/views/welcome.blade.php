@@ -14,5 +14,9 @@
     </main>
     <section class="container mx-auto">
         <h2 class="text-4xl text-slate-600 mt-8">Il meglio al miglior prezzo</h2>
+        <div class="mt-8">
+           <x-product-card/>
+        </div>
     </section>
+    <x-footer/>
 </x-layouts.app>
