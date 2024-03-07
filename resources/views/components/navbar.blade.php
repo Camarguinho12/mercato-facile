@@ -1,5 +1,5 @@
 <nav class="flex p-6 gap-4 items-center">
-    <div>
+    <div class="hidden md:block">
         <div class="w-[32px] h-[32px] rounded-full bg-indigo-600">logo</div>
     </div>
     <form class="flex-grow flex items-center rounded-full border border-slate-300 p-3 text-slate-500" action="/"

@@ -1,7 +1,7 @@
 <x-layouts.app>
     <main class="bg-emerald-300">
-        <section class="container mx-auto flex">
-            <div class="py-8">
+        <section class="container mx-auto md:flex ">
+            <div class="py-8 px-4 md:px-0">
                 <h1 class="main-color-1 text-6xl md:w-2/3"><span class="font-bold">Acquista e vendi articoli usati</span>
                     senza alzarti dal divano</h1>
                 <button class="main-bg-color-1 p-2 mt-8 rounded-full text-white"><a href="">
@@ -9,7 +9,7 @@
                   <i
                         class="fa-solid fa-plus me-2 rounded-full border border-white p-1"></i>Vendi subito</button>
             </div>
-            <img class="h-full w-1/3" src="{{ asset('images/business-people.jpg') }}" alt="img">
+            <img class="h-full md:w-1/3" src="{{ asset('images/business-people.jpg') }}" alt="img">
         </section>
     </main>
     <section class="container mx-auto">
