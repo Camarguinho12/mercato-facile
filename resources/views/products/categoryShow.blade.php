@@ -13,7 +13,10 @@ public function categoryShow(Category $category)
 }  --}}
 
 
-
+<x-app>
+    <main class="bg-emerald-300">
 @forelse ($category->products as $product )
 <x-product-card price="{{$product->price}}" category={{$product->category}} title={{$product->title}}/>
-@endforelse 
+@endforelse
+</main>
+</x-app> 
