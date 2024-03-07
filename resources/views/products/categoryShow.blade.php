@@ -17,6 +17,10 @@ public function categoryShow(Category $category)
     <main class="bg-emerald-300">
 @forelse ($category->products as $product )
 <x-product-card price="{{$product->price}}" category={{$product->category}} title={{$product->title}}/>
+    @empty
+    <h4> 
+        Nessuna categoria trovata
+    </h4>
 @endforelse
 </main>
 </x-app> 
