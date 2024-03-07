@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use PhpParser\Node\UseItem;
 
 class Form extends Component
 {
@@ -48,6 +49,16 @@ class Form extends Component
 
     public function render()
     {
+        if(Category::all()->isEmpty()){
+            $categories = ['Motori', 'Informatica', 'Elettrodomestici', 'Libri', 'Giochi', 'Sport', 'Immobili', 'Telefoni', 'Arredamento', 'Gioielli'];
+
+            foreach($categories as $category){
+                Category::create([
+                    'title' => $category
+                ]);
+            }
+        }
+
         $categories = Category::all();
 
         return view('livewire.product.form', compact('categories'));
