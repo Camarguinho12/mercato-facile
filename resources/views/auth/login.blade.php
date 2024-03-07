@@ -47,7 +47,7 @@
                 </div>
 
                 <div class="text-center mb-8">
-                    <button type="submit" class="bg-emerald-400 py-4 px-20 rounded-full">Accesso al Mercato Facile</button>
+                    <button type="submit" class="bg-emerald-400 py-4 px-20 rounded-full hover:bg-emerald-200 transition-all">Accesso al Mercato Facile</button>
                 </div>
 
                 <div class="text-center">

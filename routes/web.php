@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\HomepageController;
-use App\Livewire\Dashboard;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomepageController::class,'homepage'])->name('homepage');
 Route::get('/dashboard', [HomepageController::class, 'dashboard'])->name('dashboard')->middleware('auth');
-Route::get('/create', [HomepageController::class,'create'])->name('create');
-Route::get('/edit', [HomepageController::class,'edit'])->name('edit');
+
+Route::get('/', [HomepageController::class,'homepage'])->name('homepage');
+
 Route::get('/show', [HomepageController::class,'show'])->name('show');

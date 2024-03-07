@@ -1,4 +1,4 @@
-<x-main>
+<x-layouts.app>
 		<div class="grid-cols-2">
 			<div class="row gx-4 gx-lg-5 align-items-center">
 				<div>
@@ -16,4 +16,4 @@
 				</div>
 			</div>
 	</section>
-</x-main>
+</x-layouts.app>
