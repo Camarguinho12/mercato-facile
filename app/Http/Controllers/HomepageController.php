@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class HomepageController extends Controller
 {
     public function homepage () {
-        return view('welcome');
+        $products = Product::take(6)->get()->sortByDesc('created_at');
+        
+        return view('welcome', compact('products'));
     }
 
     public function dashboard () {
