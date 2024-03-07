@@ -22,8 +22,8 @@ class HomepageController extends Controller
         return view('products.create');
     }
 
-    public function show () {
-        return view('products.show');
+    public function show (Product $product) {
+        return view('products.show', compact('product'));
     }
 
     public function edit () {

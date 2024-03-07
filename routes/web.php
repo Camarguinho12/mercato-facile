@@ -18,4 +18,5 @@ Route::get('/dashboard', [HomepageController::class, 'dashboard'])->name('dashbo
 
 Route::get('/', [HomepageController::class,'homepage'])->name('homepage');
 
-Route::get('/show', [HomepageController::class,'show'])->name('show');
+Route::get('/show/prodotto/{product}', [HomepageController::class,'show'])->name('show');
+;
