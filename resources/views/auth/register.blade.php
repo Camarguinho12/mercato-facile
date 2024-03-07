@@ -65,7 +65,7 @@
                 </div>
 
                 <div class="text-center mb-6">
-                    <button type="submit" class="bg-emerald-400 py-4 px-20 rounded-full">Registrati</button>
+                    <button type="submit" class="bg-emerald-400 py-4 px-20 rounded-full hover:bg-emerald-200 transition-all">Registrati</button>
                 </div>
 
                 <div class="text-center">
