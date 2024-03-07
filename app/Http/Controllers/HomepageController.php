@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomepageController extends Controller
 {
@@ -21,8 +22,8 @@ class HomepageController extends Controller
         return view('products.create');
     }
 
-    public function show () {
-        return view('products.show');
+    public function show (Product $product) {
+        return view('products.show', compact('product'));
     }
 
     public function edit () {
