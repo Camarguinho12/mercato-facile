@@ -9,7 +9,8 @@ use Livewire\Component;
 
 class Form extends Component
 {
-    public $category_id;
+    public $user_id = null;
+    public $category_id = null;
     public $object = '';
     public $price = '';
     public $about = '';
@@ -27,6 +28,7 @@ class Form extends Component
         $this->validate();
 
         Product::create([
+            'user_id' => $this->user_id,
             'category_id' => $this->category_id,
             'object' => $this->object,
             'price' => $this->price,
@@ -39,7 +41,8 @@ class Form extends Component
     }
 
     public function cleanForm(){
-        $this->category_id;
+        $this->user_id = null;
+        $this->category_id = null;
         $this->object = '';
         $this->price = '';
         $this->about = '';

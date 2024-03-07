@@ -3,8 +3,8 @@
 namespace App\Providers;
 
 use App\Models\Category;
-use Doctrine\DBAL\Schema\Schema;
-use Doctrine\DBAL\Schema\View;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
