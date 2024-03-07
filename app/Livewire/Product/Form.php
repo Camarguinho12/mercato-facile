@@ -4,12 +4,11 @@ namespace App\Livewire\Product;
 
 use App\Models\Category;
 use App\Models\Product;
-use Doctrine\Inflector\Rules\English\Rules;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class Form extends Component
 {
-    public $user_id = null;
     public $category_id = null;
     public $object = '';
     public $price = '';
@@ -28,7 +27,7 @@ class Form extends Component
         $this->validate();
 
         Product::create([
-            'user_id' => $this->user_id,
+            'user_id' => Auth::user()->id,
             'category_id' => $this->category_id,
             'object' => $this->object,
             'price' => $this->price,
@@ -41,7 +40,6 @@ class Form extends Component
     }
 
     public function cleanForm(){
-        $this->user_id = null;
         $this->category_id = null;
         $this->object = '';
         $this->price = '';

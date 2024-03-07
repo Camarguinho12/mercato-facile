@@ -33,7 +33,7 @@
 
             <div class="flex flex-col items-center justify-start w-full bg-gray-50 h-full">
                 <div class="w-full lg:w-3/4">
-                    <livewire:product.form>
+                    <livewire:product.form/>
                 </div>
             </div>
 
