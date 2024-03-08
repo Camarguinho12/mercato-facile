@@ -1,5 +1,5 @@
 <article class="md:w-1/6 rounded-lg text-slate-400">
-    <a href="/">
+    <a href="{{route('show',$product->id)}}">
         <img class="rounded-lg" src="{{asset('images/product-placeholder.jpg')}}" alt="">
         <div class="flex justify-between mt-2">
             <span class="font-bold">{{$product->price??'esempio'}}</span>

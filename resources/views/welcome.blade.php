@@ -20,5 +20,4 @@
             @endforeach
         </div>
     </section>
-    <x-footer/>
 </x-layouts.app>
