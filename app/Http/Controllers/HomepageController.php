@@ -9,7 +9,6 @@ class HomepageController extends Controller
 {
     public function homepage () {
         $products = Product::take(6)->get()->sortByDesc('created_at');
-        
         return view('welcome', compact('products'));
     }
 
