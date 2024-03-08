@@ -1,4 +1,4 @@
-<article class="md:w-1/6 rounded-lg text-slate-400">
+<article class="w-full mt-4 md:mt-0 justify-between md:justify-normal md:w-1/6 rounded-lg text-slate-400">
     <a href="{{route('show',$product->id)}}">
         <img class="rounded-lg" src="{{asset('images/product-placeholder.jpg')}}" alt="">
         <div class="flex justify-between mt-2">
