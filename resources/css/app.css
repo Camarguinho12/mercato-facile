@@ -7,6 +7,7 @@
 	font-family: "Madimi One", sans-serif;
 }
 
+
 .main-color-1{
 	color: rgb(0, 119, 130);
 }
@@ -22,3 +23,60 @@
 .main-bg-color-2{
 	background-color: #13c1ac;
 }
+
+
+/* animations */
+
+.fade-left{
+	animation: fadeLeft 1s ease-in;
+}
+
+.fade-right{
+	animation: fadeRight 1s ease-in;
+}
+
+.zoom-in{
+	animation: zoomIn 1s ease-in;
+}
+
+#sideMenu:hover > ul > li > span {
+	transition: all;
+	transition-delay: 320ms;
+	opacity: 1;
+}
+
+
+@keyframes fadeRight {
+	0%{
+		transform: translateX(100px);
+		opacity: 0;
+	}
+	100%{
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes fadeLeft {
+	0%{
+		transform: translateX(-100px);
+		opacity: 0;
+	}
+	100%{
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes zoomIn {
+	0%{
+		opacity: 0;
+		transform: scale(0.1);
+	}
+
+	100%{
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+

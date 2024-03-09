@@ -11,7 +11,7 @@
         
         <div class="min-h-screen w-full flex flex-col items-center justify-center bg-gradient-to-tr from-emerald-500 to-emerald-200">
         
-            <form action="{{route('login')}}" method="POST" class="flex flex-col rounded-3xl bg-white p-8 w-full sm:w-[420px]">
+            <form action="{{route('login')}}" method="POST" class="zoom-in flex flex-col rounded-3xl bg-white p-8 w-full sm:w-[420px]">
                 @csrf
 
                 <div class="mb-2">
