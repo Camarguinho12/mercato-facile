@@ -14,9 +14,10 @@
                     class="fa-solid ps-1 size-8 fa-chart-simple text-2xl hover:rotate-12 duration-300"></i><span
                     class="absolute opacity-0 ps-1 text-sm text-gray-700 top-1">Statistiche</span>
             </li>
-            <li class="mb-10 relative"><i
-                    class="fa-solid ps-1 fa-user size-8 text-2xl hover:rotate-12 duration-300"></i><span
-                    class="absolute opacity-0 text-sm ps-1 text-gray-700 top-1">Profilo utente</span></li>
+            <li class="mb-10 relative"><i class="fa-solid fa-user-tie ps-1 size-8 text-2xl hover:rotate-12 duration-300"></i><span
+                class="absolute opacity-0 text-sm ps-1 text-gray-700 top-1">Diventa revisore</span></li>  
+            <li class="mb-10 relative text-yellow-500"><i class="fa-solid fa-face-grin-stars ps-1 size-8 text-2xl hover:rotate-12 duration-300"></i><span
+                class="absolute opacity-0 text-sm ps-1 top-1 text-yellow-500">Abbonamento premium</span></li>
         </ul>
     </div>
 </div>

@@ -15,7 +15,7 @@
             <button class="main-color-2 rounded-full p-2 border border-emerald-300 me-4"><a
                     href="{{ route('register') }}">Registrati o accedi</a></button>
         @endguest
-        <button class="main-bg-color-2 rounded-full p-2"><a href="{{ route('dashboard') }}"><i
+        <button class="main-bg-color-2 rounded-full p-2"><a href="{{ route('dashboard.crea') }}"><i
                     class="fa-solid fa-plus me-2 border border-white rounded-full p-1"></i>Vendi</a></button>
     </div>
 </nav>
