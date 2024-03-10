@@ -6,6 +6,7 @@
                 {{ session('success') }} </p>
         </div>
     @endif
+    <h1 class="fade-top text-center my-8 text-4xl">Ciao {{Auth::user()->name}}, crea il tuo primo annuncio</h1>
     <form wire:submit='store' enctype="multipart/form-data" class="flex flex-col items-center my-8">
 
         @csrf
@@ -130,7 +131,7 @@
         <!--button publica-->
         <div class="mt-6 flex items-center justify-center gap-x-6">
             <button type="submit"
-                class="bg-emerald-400 py-2 px-14 rounded-full hover:bg-emerald-200 transition-all">Pubblica</button>
+                class="bg-emerald-400 py-2 px-14 rounded-full hover:bg-emerald-200 transition-all" x-data @click="setTimeout(()=>{window.scrollTo({top: 0, behavior: 'smooth'})},350)"><i wire:loading class="fa-solid fa-spinner fa-spin me-2"></i>Pubblica</button>
         </div>
         <!--fine bottom publica-->
 

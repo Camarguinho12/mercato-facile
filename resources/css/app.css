@@ -39,6 +39,10 @@
 	animation: zoomIn 1s ease-in;
 }
 
+.fade-top{
+	animation: fadeTop 1s ease-in;
+}
+
 #sideMenu:hover > ul > li > span {
 	transition: all;
 	transition-delay: 320ms;
@@ -77,6 +81,17 @@
 	100%{
 		opacity: 1;
 		transform: scale(1);
+	}
+}
+
+@keyframes fadeTop {
+	0%{
+		transform: translateY(-60px);
+		opacity: 0;
+	}
+	100%{
+		transform: translateY(0);
+		opacity: 1;
 	}
 }
 
