@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\RevisorController;
 use App\Livewire\Dashboard\Stats;
 use Faker\Guesser\Name;
 use Illuminate\Support\Facades\Route;
@@ -30,3 +31,13 @@ Route::prefix('/dashboard')->name('dashboard.')->middleware('auth')->group(funct
 	Route::get('/statistiche',Stats::class)->name('stats');
 });
 Route::get('/categoria/{category}', [HomepageController::class, 'categoryShow'])->name('categoryShow');
+
+// Home revisore
+Route::get('/revisor/homepage',[RevisorController::class,'index'])->name('revisor.index');
+
+//Accetta annuncio
+Route::patch('/accetta/annuncio/{announcement}',[RevisorController::class,'acceptAnnouncement'])->name('revisor.accept_announcement');
+
+//Rifiuta annuncio
+Route::patch('/rifiuta/annuncio/{announcement}',[RevisorController::class,'rejectAnnouncement'])->name('revisor.reject_announcement');
+
