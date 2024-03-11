@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class HomepageController extends Controller
 {
     public function homepage () {
-        $products = Product::take(6)->get()->sortByDesc('created_at');
+        $products = Product::latest()->take(6)->get();
         return view('welcome', compact('products'));
     }
 
