@@ -23,6 +23,8 @@ Route::get('/', [HomepageController::class,'homepage'])->name('homepage');
 
 Route::get('/show/prodotto/{product}', [HomepageController::class,'show'])->name('show');
 
+
+
 Route::prefix('/dashboard')->name('dashboard.')->middleware('auth')->group(function () {
     Route::get('/crea', [HomepageController::class, 'dashboard'])->name('crea');
 	Route::get('/statistiche',Stats::class)->name('stats');
