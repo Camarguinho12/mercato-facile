@@ -1,7 +1,7 @@
 <nav class="flex p-6 gap-4 items-center">
     <div class="hidden md:block">
         <div class="w-[32px] h-[32px] rounded-full bg-indigo-600">logo</div>
-    </div>
+        </div>
     <form class="flex-grow flex items-center rounded-full border border-slate-300 p-3 text-slate-500" action="/"
         method="GET">
         <i class="fa-solid fa-magnifying-glass pe-2"></i>
