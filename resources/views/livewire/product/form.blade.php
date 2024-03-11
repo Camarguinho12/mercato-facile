@@ -2,7 +2,7 @@
     @if (session('success'))
         <div class="bg-green-100 border mt-4 border-green-400 text-green-700 px-4 flex">
             <i class="fa-solid fa-check text-xl"></i>
-            <p class=px-4 py-3 rounded-md my-2" role="alert">
+            <p class="px-4 py-3 rounded-md my-2" role="alert">
                 {{ session('success') }} </p>
         </div>
     @endif

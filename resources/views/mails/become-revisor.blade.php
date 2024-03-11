@@ -1,4 +1,4 @@
-<x-mail-layout>
+<x-layouts.mail-layout>
 
     <h1>Un utente ha chiesto di lavorare con noi</h1>
     <h2>I suoi dati:</h2>
@@ -11,4 +11,4 @@
         Rendi revisore
     </a>
 
-</x-mail-layout>
+</x-layouts.mail-layout>
