@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class HomepageController extends Controller
@@ -27,4 +29,8 @@ class HomepageController extends Controller
     public function edit () {
         return view('products.edit');
     }
-}
+
+    public function categoryShow(Category $category){
+        return view('products.categoryShow', compact('category'));
+    }
+    }
