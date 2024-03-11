@@ -24,6 +24,7 @@ Route::get('/', [HomepageController::class,'homepage'])->name('homepage');
 Route::get('/show/prodotto/{product}', [HomepageController::class,'show'])->name('show');
 
 
+
 Route::prefix('/dashboard')->name('dashboard.')->middleware('auth')->group(function () {
     Route::get('/crea', [HomepageController::class, 'dashboard'])->name('crea');
 	Route::get('/statistiche',Stats::class)->name('stats');
@@ -39,3 +40,8 @@ Route::patch('/accetta/annuncio/{announcement}',[RevisorController::class,'accep
 //Rifiuta annuncio
 Route::patch('/rifiuta/annuncio/{announcement}',[RevisorController::class,'rejectAnnouncement'])->name('revisor.reject_announcement');
 
+//Richiedi di diventare revisore
+Route::get('/richiesta/revisore', [RevisorController::class, 'becomeRevisor'])->name('become.revisor');
+
+//Rendi Utente Revisore
+Route::get('/rendi/revisore/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
