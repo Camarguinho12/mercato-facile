@@ -1,4 +1,6 @@
-<div id="chart_div" class="h-full w-full">
+<div class="h-full">
+    <h1 class="text-center text-4xl zoom-in my-8 fade-top">Le tue statistiche</h1>
+    <div id="chart_div"></div>
     <script>
         google.charts.load("current", { packages: ["corechart"] });
     
@@ -24,7 +26,15 @@
                         color: "#666" 
                     }
                 },
-                colors: ["#3366cc"] 
+                colors: ['#13c1ac'],
+                hAxis: {
+                textStyle: {
+                    fontSize: 12, // Dimensione del font delle etichette
+                    fontName: "Madimi One", // Nome del font delle etichette
+                    color: "#666" // Colore delle etichette
+                }
+            },
+            backgroundColor: 'rgb(249,250,251)' 
             };
     
             var chart = new google.visualization.ColumnChart(
