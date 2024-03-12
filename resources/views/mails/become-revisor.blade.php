@@ -7,7 +7,7 @@
     <p>Email: {{$user->email}}</p>
 
     <p>se vuoi renderlo supervisore clica qui:</p>
-    <a href="{{route('make.revisor', compact('user'))}}">
+    <a href="{{route('make.revisor', compact('user'))}}" class="text-emerald-500">
         Rendi revisore
     </a>
 
