@@ -156,8 +156,9 @@ return [
     */
 
     'providers' => ServiceProvider::defaultProviders()->merge([
-        /*
-         * Package Service Providers...
+        TeamTNT\Scout\TNTSearchScoutServiceProvider::class,
+        Laravel\Scout\ScoutServiceProvider::class,
+         /* Package Service Providers...
          */
         App\Providers\FortifyServiceProvider::class,
         /*

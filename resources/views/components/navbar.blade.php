@@ -2,11 +2,7 @@
     <div class="hidden md:block">
         <div class="w-[32px] h-[32px] rounded-full bg-indigo-600">logo</div>
     </div>
-    <form class="flex-grow flex items-center rounded-full border border-slate-300 p-3 text-slate-500" action="/"
-        method="GET">
-        <i class="fa-solid fa-magnifying-glass pe-2"></i>
-        <input type="text" class="w-full border-none outline-none">
-    </form>
+      <livewire:search-bar/>
     <div class="text-white items-center flex">
         @auth
             <livewire:auth.logout />
@@ -18,9 +14,9 @@
         <button class="main-bg-color-2 rounded-full p-2"><a href="{{ route('dashboard.crea') }}"><i
                     class="fa-solid fa-plus me-2 border border-white rounded-full p-1"></i>Vendi</a></button>
                     </div>
-                    <div>
+                    @if (Auth::user()->is_revisor)
                       <a href="{{route('revisor.index')}}" class="p-2 border border-emerald-300 rounded-lg">Sezione revisore</a>
-                    </div>
+                    @endif
                     <div class="relative inline-block text-left">
                          <div>
                           <button type="button" class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
