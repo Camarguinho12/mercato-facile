@@ -10,7 +10,7 @@ class Product extends Model
 {
     use HasFactory, Searchable;
     protected $fillable = ['object','price','about', 'category_id', 'user_id'];
-    public $asYouType = true;
+    
 
     public function toSearchableArray()
     {

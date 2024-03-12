@@ -17,7 +17,7 @@ class SearchBar extends Component
     {
         $searchResult='';
         if($this->userInput!=''){
-            $searchResult=Product::search($this->userInput)->where('is_accepted',true);
+            $searchResult=Product::search($this->userInput)->take(5)->get();;
         }
         return view('livewire.search-bar',compact('searchResult'));
     }
