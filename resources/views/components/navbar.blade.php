@@ -18,7 +18,7 @@
     </div>
     <div class="grid grid-cols-5 md:grid-cols-10 bg-slate-50 border-t border-b p-2">
         @foreach ($categories as $category)
-            <a href="{{route('categoryShow',$category->id)}}">{{$category->title}}</a>
+            <a class="text-slate-400" href="{{route('categoryShow',$category->id)}}">{{$category->title}}</a>
         @endforeach
     </div>
 </nav>

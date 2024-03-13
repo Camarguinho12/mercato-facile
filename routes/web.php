@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\RevisorController;
 use App\Livewire\Dashboard\Stats;
+use App\Livewire\Revisor;
 use Faker\Guesser\Name;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +29,7 @@ Route::get('/show/prodotto/{product}', [HomepageController::class,'show'])->name
 Route::prefix('/dashboard')->name('dashboard.')->middleware('auth')->group(function () {
     Route::get('/crea', [HomepageController::class, 'dashboard'])->name('crea');
 	Route::get('/statistiche',Stats::class)->name('stats');
+	Route::get('/revisiona',Revisor::class)->middleware('isRevisor')->name('revisiona');
 });
 Route::get('/categoria/{category}', [HomepageController::class, 'categoryShow'])->name('categoryShow');
 

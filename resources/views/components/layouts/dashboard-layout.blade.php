@@ -12,7 +12,7 @@
         <x-navbar/>
 		<div class="flex bg-gray-50">
                 <x-side-menu/>
-                <div class="w-full lg:w-3/4">
+                <div class="w-full">
                     {{ $slot }}
             </div>
         </div>
