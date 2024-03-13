@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="relative flex flex-col my-8">
-                    <input type="email" name="email" id="email" value="{{old('email')}}" class="peer h-16 w-full border-2 rounded border-gray-300 placeholder-transparent focus:outline-none focus:border-emerald-400 @error('email') border-red-600 focus:border-red-300 @enderror" placeholder=" ">
+                    <input type="email" name="email" id="email" value="{{old('email')}}" class="peer h-12 w-full px-2 border-2 rounded border-gray-300 placeholder-transparent focus:outline-none focus:border-emerald-400 @error('email') border-red-600 focus:border-red-300 @enderror" placeholder=" ">
                     <label for="email" class="absolute left-2 -top-3.5 text-gray-600 text-xs peer-placeholder-shown:text-base peer-placeholder-shown:top-2.5 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-emerald-500 transition-all @error('email') peer-focus:text-red-400 @enderror">Email</label>
                 
                     @error('email')
@@ -30,8 +30,8 @@
                     @enderror
                 </div>
 
-                <div class="relative flex flex-col mb-4">
-                    <input type="password" name="password" id="password" class="peer h-16 w-full border-2 rounded border-gray-300 placeholder-transparent focus:outline-none focus:border-emerald-400 @error('password') border-red-600 focus:border-red-300 @enderror" placeholder=" ">
+                <div class="relative flex flex-col mb-8">
+                    <input type="password" name="password" id="password" class="peer h-12 w-full px-2 border-2 rounded border-gray-300 placeholder-transparent focus:outline-none focus:border-emerald-400 @error('password') border-red-600 focus:border-red-300 @enderror" placeholder=" ">
                     <label for="password" class="absolute left-2 -top-3.5 text-gray-600 text-xs peer-placeholder-shown:text-base peer-placeholder-shown:top-2.5 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-emerald-500 transition-all @error('password') peer-focus:text-red-400 @enderror">Password</label>
                 
                     @error('password')
@@ -39,7 +39,7 @@
                     @enderror
                 </div>
 
-                <div class="mb-4">
+                <div class="mb-8">
                     <label for="remember_me" class="inline-flex items-center">
                         <input type="checkbox" id="remember_me" name="remember" class="rounded border-gray-300 text-emerald-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" {{ old('remember') ? 'checked' : '' }}>
                         <span class="ml-2 text-sm text-gray-600">Remember me</span>
@@ -47,7 +47,7 @@
                 </div>
 
                 <div class="text-center mb-8">
-                    <button type="submit" class="bg-emerald-400 py-4 px-20 rounded-full hover:bg-emerald-200 transition-all">Accesso al Mercato Facile</button>
+                    <button type="submit" class="bg-emerald-400 py-2 px-10 rounded-full hover:bg-emerald-200 transition-all">Accesso al Mercato Facile</button>
                 </div>
 
                 <div class="text-center">

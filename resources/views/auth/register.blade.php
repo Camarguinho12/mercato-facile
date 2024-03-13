@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="relative flex flex-col my-6">
-                    <input type="name" name="name" id="name" value="{{old('name')}}" class="peer h-16 w-full border-2 rounded border-gray-300 placeholder-transparent focus:outline-none focus:border-emerald-400 @error('name') border-red-600 focus:border-red-300 @enderror" placeholder=" ">
+                    <input type="name" name="name" id="name" value="{{old('name')}}" class="peer h-12 w-full px-2 border-2 rounded border-gray-300 placeholder-transparent focus:outline-none focus:border-emerald-400 @error('name') border-red-600 focus:border-red-300 @enderror" placeholder=" ">
                     <label for="name" class="absolute left-2 -top-3.5 text-gray-600 text-xs peer-placeholder-shown:text-base peer-placeholder-shown:top-2.5 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-emerald-500 transition-all @error('name') peer-focus:text-red-400 @enderror">Nome</label>
                 
                     @error('name')
@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="relative flex flex-col mb-6">
-                    <input type="email" name="email" id="email" value="{{old('email')}}" class="peer h-16 w-full border-2 rounded border-gray-300 placeholder-transparent focus:outline-none focus:border-emerald-400 @error('email') border-red-600 focus:border-red-300 @enderror" placeholder=" ">
+                    <input type="email" name="email" id="email" value="{{old('email')}}" class="peer h-12 w-full px-2 border-2 rounded border-gray-300 placeholder-transparent focus:outline-none focus:border-emerald-400 @error('email') border-red-600 focus:border-red-300 @enderror" placeholder=" ">
                     <label for="email" class="absolute left-2 -top-3.5 text-gray-600 text-xs peer-placeholder-shown:text-base peer-placeholder-shown:top-2.5 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-emerald-500 transition-all @error('email') peer-focus:text-red-400 @enderror">Email</label>
                 
                     @error('email')
@@ -47,7 +47,7 @@
                 </div>
 
                 <div class="relative flex flex-col mb-6">
-                    <input type="password" name="password" id="password" class="peer h-16 w-full border-2 rounded border-gray-300 placeholder-transparent focus:outline-none focus:border-emerald-400 @error('password') border-red-600 focus:border-red-300 @enderror" placeholder=" ">
+                    <input type="password" name="password" id="password" class="peer h-12 w-full px-2 border-2 rounded border-gray-300 placeholder-transparent focus:outline-none focus:border-emerald-400 @error('password') border-red-600 focus:border-red-300 @enderror" placeholder=" ">
                     <label for="password" class="absolute left-2 -top-3.5 text-gray-600 text-xs peer-placeholder-shown:text-base peer-placeholder-shown:top-2.5 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-emerald-500 transition-all @error('password') peer-focus:text-red-400 @enderror">Password</label>
                 
                     @error('password')
@@ -56,7 +56,7 @@
                 </div>
 
                 <div class="relative flex flex-col mb-6">
-                    <input type="password" name="password_confirmation" id="password_confirmation" value="{{old('password_confirmation')}}" class="peer h-16 w-full border-2 rounded border-gray-300 placeholder-transparent focus:outline-none focus:border-emerald-400 @error('password_confirmation') border-red-600 focus:border-red-300 @enderror" placeholder=" ">
+                    <input type="password" name="password_confirmation" id="password_confirmation" value="{{old('password_confirmation')}}" class="peer h-12 w-full px-2 border-2 rounded border-gray-300 placeholder-transparent focus:outline-none focus:border-emerald-400 @error('password_confirmation') border-red-600 focus:border-red-300 @enderror" placeholder=" ">
                     <label for="password_confirmation" class="absolute left-2 -top-3.5 text-gray-600 text-xs peer-placeholder-shown:text-base peer-placeholder-shown:top-2.5 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-emerald-500 transition-all @error('password_confirmation') peer-focus:text-red-400 @enderror">Conferma Password</label>
                 
                     @error('password_confirmation')
@@ -65,7 +65,22 @@
                 </div>
 
                 <div class="text-center mb-6">
-                    <button type="submit" class="bg-emerald-400 py-4 px-20 rounded-full hover:bg-emerald-200 transition-all">Registrati</button>
+                    <button type="submit" class="bg-emerald-400 py-2 px-20 rounded-full hover:bg-emerald-200 transition-all">Registrati</button>
+                </div>
+
+                <div class="flex justify-center items-center mb-6">
+                        <hr class="border border-emerald-300 w-2/6">
+
+                        <span class="w-2/6 text-center">o accedi con</span>
+
+                        <hr class="border border-emerald-300 w-2/6">
+                </div>
+
+                <div class="text-center mb-6">
+                    <a href="{{route('social.login', ['provider' => 'google'])}}" class="border border-emerald-500 hover:bg-emerald-200 font-medium rounded-full text-sm px-20 py-2 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path fill="#4285F4" fill-rule="evenodd" d="M21.6 12.227c0-.709-.064-1.39-.182-2.045H12v3.868h5.382a4.6 4.6 0 0 1-1.996 3.018l3.232 2.51c1.891-1.742 2.982-4.305 2.982-7.35Z" clip-rule="evenodd"></path><path fill="#34A853" fill-rule="evenodd" d="M12 22c2.7 0 4.964-.895 6.618-2.423l-3.232-2.509c-.895.6-2.04.955-3.386.955-2.605 0-4.81-1.76-5.595-4.123l-3.341 2.59A9.996 9.996 0 0 0 12 22Z" clip-rule="evenodd"></path><path fill="#FBBC05" fill-rule="evenodd" d="M6.405 13.9c-.2-.6-.314-1.24-.314-1.9 0-.66.114-1.3.314-1.9L3.064 7.51A9.996 9.996 0 0 0 2 12c0 1.614.386 3.14 1.064 4.49l3.34-2.59Z" clip-rule="evenodd"></path><path fill="#EA4335" fill-rule="evenodd" d="M12 5.977c1.468 0 2.786.505 3.823 1.496l2.868-2.868C16.959 2.99 14.696 2 12 2 8.09 2 4.71 4.24 3.064 7.51l3.34 2.59C7.192 7.736 9.396 5.977 12 5.977Z" clip-rule="evenodd"></path></svg>
+                         Google
+                    </a>
                 </div>
 
                 <div class="text-center">
