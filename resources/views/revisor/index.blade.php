@@ -60,12 +60,12 @@
     <form  action="{{route('revisor.accept_announcement', ['announcement'=> $announcement_to_check])}}" method="POST">
         @csrf
     @method('PATCH')
-    <button class="bg-lime-600 rounded-full p-2" type="submit" fare bottone> Accetta </button>
+    <button class="bg-lime-600 rounded-full p-2" type="submit"> Accetta </button>
     </form>
     <form action="{{route('revisor.reject_announcement', ['announcement'=> $announcement_to_check])}}" method="POST">
         @csrf
     @method('PATCH')
-    <button class="bg-red-600 rounded-full p-2" type="submit" fare bottone> Rifiuta </button>
+    <button class="bg-red-600 rounded-full p-2" type="submit"> Rifiuta </button>
     </form>
     @endif
     </div>    
