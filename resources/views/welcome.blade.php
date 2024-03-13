@@ -14,7 +14,7 @@
     </main>
     <section class="container mx-auto">
         <h2 class="text-4xl text-slate-600 mt-8">Il meglio al miglior prezzo</h2>
-        <div class="mt-8 flex justify-center md:justify-normal flex-wrap gap-4">
+        <div class="mt-8 grid grid-cols-5 gap-4">
             @foreach ($products as $product)
                 <x-product-card :product='$product'/>
             @endforeach

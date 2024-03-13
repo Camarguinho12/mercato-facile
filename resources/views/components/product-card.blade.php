@@ -1,4 +1,4 @@
-<article class="w-full mt-4 md:mt-0 justify-between md:justify-normal md:w-1/6 rounded-lg text-slate-400">
+<article class="rounded-lg text-slate-400">
     <a href="{{ route('show', $product->id) }}">
         <div class="overflow-hidden rounded-lg">
             <img class="rounded-lg hover:scale-110 duration-300" src="{{ asset('images/product-placeholder.jpg') }}" alt="">
