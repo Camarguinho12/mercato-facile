@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class HomepageController extends Controller
 {
     public function homepage () {
-        $products = Product::latest()->take(5)->get();
+        $products = Product::latest()->where('is_accepted',true)->take(5)->get();
         return view('welcome', compact('products'));
     }
 
