@@ -11,10 +11,29 @@ use Livewire\Component;
 class Revisor extends Component
 {
     public $products;
+    public $showMessage;
 
     public function mount(){
         $this->products = $this->products = Product::whereNull('is_accepted')->orWhere('is_accepted', false)->get();
+        $this->showMessage=['display'=>false,'messageIsPositive'=>true, 'message'=>null];
+    }
 
+    public function toggleMessage(){
+        $this->showMessage['display']=!$this->showMessage['display'];
+    }
+
+    public function validateProduct($id){
+        $productToUpdate= Product::find($id);
+        $productToUpdate->setAccepted(true);
+        $this->products=Product::whereNull('is_accepted')->orWhere('is_accepted', false)->get();
+        $this->showMessage=['display'=>true,'messageIsPositive'=>true,'message'=>'annuncio approvato con successo'];
+    }
+
+    public function denyProduct($id){
+        $productToUpdate= Product::find($id);
+        $productToUpdate->setAccepted(false);
+        $this->products=Product::whereNull('is_accepted')->orWhere('is_accepted', false)->get();
+        $this->showMessage=['display'=>!$this->showMessage['display'],'messageIsPositive'=>false,'message'=>'annuncio rifiutato con successo'];
     }
 
 
