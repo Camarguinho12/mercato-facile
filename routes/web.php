@@ -2,14 +2,13 @@
 
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\RevisorController;
+use App\Http\Controllers\SocialiteProviderController;
 use App\Livewire\Dashboard\Stats;
 use App\Livewire\Revisor;
-use App\Models\User;
 use Faker\Guesser\Name;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use Laravel\Socialite\Facades\Socialite;
-use Illuminate\Support\Facades\Hash;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -52,28 +51,8 @@ Route::get('/richiesta/revisore', [RevisorController::class, 'becomeRevisor'])->
 //Rendi Utente Revisore
 Route::get('/rendi/revisore/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
 
-//Socialite
-Route::get('/auth/{provider}/redirect', function ($provider) {
-    return Socialite::driver($provider)->redirect();
-})->name('social.login');
- 
-Route::get('/auth/{provider}/callback', function ($provider) {
-    $providerUser = Socialite::driver($provider)->user();
+//Socialite login
+Route::get('/auth/{provider}/redirect', [SocialiteProviderController::class, 'redirectToProvider'])->name('social.login');
 
-    $user = User::updateOrCreate(
-        
-    ['email' => $providerUser->email,], 
-    
-    [
-        'name' => $providerUser->name,
-        'email' => $providerUser->email,
-        'password' => Hash::make($providerUser->token),
-        //'provider_token' => $providerUser->token,
-        //'provider_refresh_token' => $providerUser->refreshToken,
-    ]);
- 
-    Auth::login($user);
- 
-    return redirect('/dashboard/crea');
-
-})->name('social.callback');
+//Socialite callback
+Route::get('/auth/{provider}/callback', [SocialiteProviderController::class, 'providerCallback'])->name('social.callback');

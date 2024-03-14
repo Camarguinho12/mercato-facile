@@ -14,7 +14,7 @@
             <span class="text-sm ms-2">Spedizione disponibile</span>
         </div>
     </a>
-    @if (Auth::user()->is_revisor && !$product->is_accepted)
+    @if (Auth::user()->is_revisor ?? false && !$product->is_accepted)
         <div class="flex">
             <form class="flex-1" action="{{route('revisor.accept_announcement',$product->id)}}" method="post">
                 @csrf
