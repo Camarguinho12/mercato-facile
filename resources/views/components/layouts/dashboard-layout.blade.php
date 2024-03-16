@@ -10,7 +10,7 @@
     </head>
     <body>
         <x-navbar/>
-		<div class="flex bg-gray-50">
+		<div class="flex flex-col md:flex-row bg-gray-50">
                 <x-side-menu/>
                 <div class="w-full">
                     {{ $slot }}
