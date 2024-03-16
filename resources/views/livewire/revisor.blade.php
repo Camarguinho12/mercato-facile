@@ -6,7 +6,7 @@
     @endif
     <h1 class="fade top text-center text-4xl my-10">Revisiona gli annunci degli altri utenti</h1>
     <div class="grid grid-cols-5 gap-6">
-        @forelse ($products as $product)
+        @forelse ($products as $key=>$product)
             <livewire:revisor-product wire:key="{{ $product->id }}" :product='$product' />
         @empty
             <p class="mt-10 text-slate-400 text-xl">Nessun annuncio da revisionare</p>
