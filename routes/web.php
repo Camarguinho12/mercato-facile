@@ -53,27 +53,27 @@ Route::get('/richiesta/revisore', [RevisorController::class, 'becomeRevisor'])->
 Route::get('/rendi/revisore/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
 
 //Socialite
-Route::get('/auth/{provider}/redirect', function ($provider) {
-    return Socialite::driver($provider)->redirect();
-})->name('social.login');
+// Route::get('/auth/{provider}/redirect', function ($provider) {
+//     return Socialite::driver($provider)->redirect();
+// })->name('social.login');
  
-Route::get('/auth/{provider}/callback', function ($provider) {
-    $providerUser = Socialite::driver($provider)->user();
+// Route::get('/auth/{provider}/callback', function ($provider) {
+//     $providerUser = Socialite::driver($provider)->user();
 
-    $user = User::updateOrCreate(
+//     $user = User::updateOrCreate(
         
-    ['email' => $providerUser->email,], 
+//     ['email' => $providerUser->email,], 
     
-    [
-        'name' => $providerUser->name,
-        'email' => $providerUser->email,
-        'password' => Hash::make($providerUser->token),
-        //'provider_token' => $providerUser->token,
-        //'provider_refresh_token' => $providerUser->refreshToken,
-    ]);
+//     [
+//         'name' => $providerUser->name,
+//         'email' => $providerUser->email,
+//         'password' => Hash::make($providerUser->token),
+//         //'provider_token' => $providerUser->token,
+//         //'provider_refresh_token' => $providerUser->refreshToken,
+//     ]);
  
-    Auth::login($user);
+//     Auth::login($user);
  
-    return redirect('/dashboard/crea');
+//     return redirect('/dashboard/crea');
 
-})->name('social.callback');
+// })->name('social.callback');
