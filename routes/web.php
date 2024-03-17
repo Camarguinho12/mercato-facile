@@ -4,6 +4,7 @@ use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\RevisorController;
 use App\Http\Controllers\SocialiteProviderController;
 use App\Livewire\Dashboard\Stats;
+use App\Livewire\Dashboard\Notifications;
 use App\Livewire\Revisor;
 use Faker\Guesser\Name;
 use Illuminate\Support\Facades\Route;
@@ -33,6 +34,7 @@ Route::prefix('/dashboard')->name('dashboard.')->middleware('auth')->group(funct
     Route::get('/crea', [HomepageController::class, 'dashboard'])->name('crea');
 	Route::get('/statistiche',Stats::class)->name('stats');
 	Route::get('/revisiona',Revisor::class)->middleware('isRevisor')->name('revisiona');
+	Route::get('notifiche',Notifications::class)->name('notifications');
 });
 Route::get('/categoria/{category}', [HomepageController::class, 'categoryShow'])->name('categoryShow');
 

@@ -1,4 +1,4 @@
-<article class="rounded-lg text-slate-400 border ">
+<article class="rounded-lg text-slate-400 border relative">
     <a href="{{ route('show', $product->id) }}">
         <div class="overflow-hidden rounded-lg">
             <img class="rounded-lg hover:scale-110 duration-300" src="{{ asset('images/product-placeholder.jpg') }}"
@@ -12,10 +12,10 @@
     </a>
         <div class="flex">
             <div class="flex-1">
-                <button type="submit" wire:click='$parent.validateProduct({{$product->id}})' class="bg-emerald-200 rounded p-2 w-full"><i wire:loading class="fa-solid fa-spinner fa-spin me-2"></i>Accetta</button>
+                <button wire:click='$parent.validateProduct({{$product->id}})' class="bg-emerald-400 rounded p-2 w-full text-black"></i>Accetta</button>
             </div>
             <div class="flex-1">
-                <button wire:click='$parent.denyProduct({{$product->id}})' class="bg-red-200 flex-1 p-2 w-full"><i wire:loading class="fa-solid fa-spinner fa-spin me-2"></i>Rifiuta</button>
+                <button wire:click='$parent.denyProduct({{$product->id}})' class="bg-red-400 flex-1 p-2 w-full rounded text-black">Rifiuta</button>
             </div>
         </div>
 </article>
