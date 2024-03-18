@@ -9,28 +9,41 @@ use Illuminate\Http\Request;
 
 class HomepageController extends Controller
 {
-    public function homepage () {
-        $products = Product::latest()->where('is_accepted',true)->take(5)->get();
-        return view('welcome', compact('products'));
+    public function homepage()
+    {
+        $products = Product::latest()->where('is_accepted', true)->take(5)->get();
+        $motori = Product::where('is_accepted', true)->whereHas('category', function ($query) {
+                $query->where('title', 'motori');
+            })->get();
+        $tecnologia=Product::where('is_accepted', true)->whereHas('category', function ($query) {
+            $query->where('title', 'informatica')->orWhere('title','telefoni');
+        })->get(); 
+        
+        return view('welcome', compact('products','motori','tecnologia'));
     }
 
-    public function dashboard () {
+    public function dashboard()
+    {
         return view('dashboard');
     }
 
-    public function create () {
+    public function create()
+    {
         return view('products.create');
     }
 
-    public function show (Product $product) {
+    public function show(Product $product)
+    {
         return view('products.show', compact('product'));
     }
 
-    public function edit () {
+    public function edit()
+    {
         return view('products.edit');
     }
 
-    public function categoryShow(Category $category){
+    public function categoryShow(Category $category)
+    {
         return view('products.categoryShow', compact('category'));
     }
 

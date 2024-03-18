@@ -1,9 +1,9 @@
 <div>
-    @if (session('success'))
+    @if (session('message'))
         <div class="bg-green-100 border mt-4 border-green-400 text-green-700 px-4 flex items-center">
             <i class="fa-solid fa-check text-xl"></i>
             <p class="px-4 py-3 rounded-md my-2" role="alert">
-                {{ session('success') }} </p>
+                {{ session('message') }} </p>
         </div>
     @endif
     <h1 class="fade-top text-center my-8 text-4xl">{{__('ui.ciao')}} {{ Auth::user()->name}}, {{__('ui.fraseHForm')}}</h1>
@@ -12,8 +12,8 @@
         @csrf
 
         <!--select category-->
-        <div class="bg-white p-4 rounded-md md:w-2/4 xl:w-2/5">
-            <h2 class="text-xl">{{__('ui.selezionaCategoria')}}</h2>
+        <div class="fade-right bg-white p-4 rounded-md md:w-2/4 xl:w-2/5">
+            <h2 class="text-xl">Seleziona la categoria</h2>
             <div class="relative flex flex-col mb-8 w-full mt-8">
                 <select wire:model="category_id" type="text" id="category"
                     class="peer h-10 w-full border rounded placeholder-transparent focus:outline-none focus:border-emerald-400 @error('category') border-red-600 focus:border-red-300 @enderror"
@@ -35,7 +35,7 @@
         <!--fine select category-->
 
         <!--input object-->
-        <div class="w-5/6 p-4 md:w-2/4 xl:w-2/5 mt-12 rounded-md bg-white">
+        <div class="fade-left w-5/6 p-4 md:w-2/4 xl:w-2/5 mt-12 rounded-md bg-white">
             <h2 class="text-xl">{{__('ui.oggettoDaVendere')}}</h2>
             <div class="relative flex flex-col mb-8 mt-8">
                 <input wire:model="object" type="text" id="object"
@@ -53,7 +53,7 @@
         <!--fine input object-->
 
         <!--input price-->
-        <div class="w-5/6 p-4 md:w-2/4 xl:w-2/5 mt-12 rounded-md bg-white">
+        <div class="fade-right w-5/6 p-4 md:w-2/4 xl:w-2/5 mt-12 rounded-md bg-white">
             <h2 class="text-xl">{{__('ui.prezzoAnnuncio')}}</h2>
             <div class="relative flex flex-col mb-8 w-full mt-8">
                 <input wire:model="price" type="text" id="price"
@@ -71,7 +71,7 @@
         <!--fine input price-->
 
         <!--input about-->
-        <div class="w-5/6 p-4 md:w-2/4 xl:w-2/5 mt-12 rounded-md bg-white">
+        <div class="fade-left w-5/6 p-4 md:w-2/4 xl:w-2/5 mt-12 rounded-md bg-white">
             <h2 class="text-xl">{{__('ui.descrizioneAnnnucio')}}</h2>
             <div class="relative flex flex-col mb-8 w-full mt-8">
                 <textarea wire:model="about" type="text" id="about" rows="5"

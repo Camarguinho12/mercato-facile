@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\BecomeRevisor;
 use App\Models\Product;
 use App\Models\User;
+use App\Notifications\newRevisorRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
@@ -30,14 +31,20 @@ class RevisorController extends Controller
         return redirect()->back()->with('message', 'Complimenti, hai rifiutato l\'annuncio');
     }
 
-    public function becomeRevisor(){
-        Mail::to('admin@mercatofacile.it')->send(new BecomeRevisor(Auth::user()));
-
+    public function becomeRevisor()
+    {
+        // Mail::to('admin@mercatofacile.it')->send(new BecomeRevisor(Auth::user())); attivare questa linea se preferite ricevere mail di conferma
+        $revisorsUsers = User::where('is_revisor', true)->get();
+        $currentUserName = Auth::user()->name;
+        foreach ($revisorsUsers as $revisor) {
+            $revisor->notify(new newRevisorRequest(Auth::id(), "l'utente {$currentUserName} ha chiesto di diventare revisore"));
+        }
         return redirect()->back()->with('message', 'Hai richiesto di diventare revisore');
     }
 
-    public function makeRevisor(User $user){
-        Artisan::call('facile:MakeUserRevisor', ["email"=>$user->email]);
+    public function makeRevisor(User $user)
+    {
+        Artisan::call('facile:MakeUserRevisor', ["email" => $user->email]);
 
         return redirect()->route('homepage')->with('message', 'L\'untente è diventato revisore');
     }

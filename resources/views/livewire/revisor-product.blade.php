@@ -1,4 +1,4 @@
-<article class="rounded-lg text-slate-400 border ">
+<article class="rounded-lg text-slate-400 border relative">
     <a href="{{ route('show', $product->id) }}">
         <div class="overflow-hidden rounded-lg">
             <img class="rounded-lg hover:scale-110 duration-300" src="{{ asset('images/product-placeholder.jpg') }}"
