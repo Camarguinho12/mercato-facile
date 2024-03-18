@@ -20,4 +20,6 @@
             @endforeach
         </div>
     </section>
+   
+@include('cookie-consent::index')
 </x-layouts.app>
