@@ -13,11 +13,23 @@
         </section>
     </main>
     <section class="container mx-auto">
-        <h2 class="text-4xl text-slate-600 mt-8">Il meglio al miglior prezzo</h2>
+        <h2 class="text-4xl text-slate-600 mt-8">I nostri articoli più recenti</h2>
         <div class="mt-8 grid grid-cols-1 md:grid-cols-5 gap-4">
             @foreach ($products as $product)
                 <x-product-card :product='$product'/>
             @endforeach
         </div>
+        <h2 class="text-4xl text-slate-600 mt-8">Trova l'automobile più adatta alle tue esigenze</h2>
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-5 gap-4">
+        @foreach ($motori as $product)
+            <x-product-card :product='$product'/>
+        @endforeach
+        </div>
+        <h2 class="text-4xl text-slate-600 mt-8">Gli articoli hi-tech da sogno</h2>
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-5 gap-4">
+            @foreach ($tecnologia as $product)
+                <x-product-card :product='$product'/>
+            @endforeach
+            </div>
     </section>
 </x-layouts.app>
