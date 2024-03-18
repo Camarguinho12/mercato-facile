@@ -9,7 +9,9 @@ return [
     "fraseHeader1" => "Buy and Sell used items",
     "fraseHeader2" => "without leaving the couch",
     "vendiSubito" => "Sell Now",
-    "annunci" => "The best at the best price",
+    "annunciRecenti" => "Our most recent articles",
+    "trovaAuto" => "Find the car that best suits your needs",
+    "annunciHiTech" => "The dream hi-tech items",
 
     //Card
     "Motori" => "Engines",
@@ -36,7 +38,8 @@ return [
     "fraseSostenibilita" => "When you buy second hand items you save money and help the planet",
 
     //Category show
-    "nessunArticolo" => "No articles in this category",
+    "fraseHCategoryShow" => "all products in the category",
+    "nessunArticolo" => "No ads for category found",
 
     //Footer
     "chiSiamo" => "About us",
@@ -77,6 +80,7 @@ return [
     "diventaRevisore" => "Become a reviewer",
     "revisionaAnnunci" => "Review ads",
     "abbonamentoPremium" => "Premium membership",
+    "leTueNotifiche" => "Your notifications",
     
     //Statistiche
     "fraseHStatistiche" => "Your statistics",

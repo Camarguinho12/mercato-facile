@@ -12,7 +12,9 @@ return [
     "fraseHeader1" => "Acquista e vendi articoli usati",
     "fraseHeader2" => "senza alzarti dal divano",
     "vendiSubito" => "Vendi subito",
-    "annunci" => "Il meglio al miglior prezzo",
+    "annunciRecenti" => "I nostri articoli più recenti",
+    "trovaAuto" => "Trova l'automobile più adatta alle tue esigenze",
+    "annunciHiTech" => "Gli articoli hi-tech da sogno",
 
     //Card
     "Motori" => "Motori",
@@ -39,7 +41,8 @@ return [
     "fraseSostenibilita" => "Quando acquisti articoli di seconda mano risparmi denaro e aiuti il pianeta",
 
     //Category show
-    "nessunArticolo" => "Nessun articolo in questa categoria",
+    "fraseHCategoryShow" => "Tutti i prodotti in questa categoria",
+    "nessunArticolo" => "Nessun annuncio in questa categoria",
     
     //Footer
     "chiSiamo" => "Chi siamo",
@@ -80,6 +83,7 @@ return [
     "diventaRevisore" => "Diventa revisore",
     "revisionaAnnunci" => "Revisiona annunci",
     "abbonamentoPremium" => "Abbonamento premium",
+    "leTueNotifiche" => "Le tue notifiche",
 
     //Statistiche
     "fraseHStatistiche" => "Le tue statistiche",

@@ -13,7 +13,7 @@
 
         <!--select category-->
         <div class="fade-right bg-white p-4 rounded-md md:w-2/4 xl:w-2/5">
-            <h2 class="text-xl">Seleziona la categoria</h2>
+            <h2 class="text-xl">{{__('ui.selezionaCategoria')}}</h2>
             <div class="relative flex flex-col mb-8 w-full mt-8">
                 <select wire:model="category_id" type="text" id="category"
                     class="peer h-10 w-full border rounded placeholder-transparent focus:outline-none focus:border-emerald-400 @error('category') border-red-600 focus:border-red-300 @enderror"

@@ -9,7 +9,9 @@ return [
     "fraseHeader1" => "Compra e vende objetos usados",
     "fraseHeader2" => "sem levantar do sofá",
     "vendiSubito" => "Venda agora",
-    "annunci" => "O melhor ao melhor preço",
+    "annunciRecenti" => "Os nossos produtos mais recentes",
+    "trovaAuto" => "Encontre o carro que melhor se adapta às suas necessidades",
+    "annunciHiTech" => "Os itens de alta tecnologia dos sonhos",
 
     //Card
     "Motori" => "Veículos",
@@ -33,6 +35,7 @@ return [
     "rifiutato" => "Anúncio reprovado com sucesso",
 
     //Product show
+    "fraseHCategoryShow" => "Todos os produtos desta categoria",
     "fraseSostenibilita" => "Ao comprar itens de segunda mão você economiza dinheiro e ajuda o planeta",
 
     //Category show
@@ -77,6 +80,7 @@ return [
     "diventaRevisore" => "Torne-se um revisor",
     "revisionaAnnunci" => "Revise os anúncios",
     "abbonamentoPremium" => "Assinatura premium",
+    "leTueNotifiche" => "Suas notificações",
 
     //Statistiche
     "fraseHStatistiche" => "Suas estatísticas",
