@@ -1,4 +1,4 @@
-<x-slot:notificationCount>{{$notificationCount}}</x-slot:notificationCount>
+
 <div class="min-h-screen p-4">
     <h1 class="fade-top text-slate-400 text-center text-4xl my-10">Controlla le tue notifiche</h1>
     @foreach ($userNotifications as $notification)

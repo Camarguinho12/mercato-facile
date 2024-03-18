@@ -10,20 +10,16 @@ use Livewire\Component;
 class Notifications extends Component
 {
     public $userNotifications;
-    public $notificationCount;
 
     public function mount(){
         foreach(Auth::user()->notifications as $notification){
             $this->userNotifications[]=$notification->data;
         };
-        $this->notificationCount=Auth::user()->notifications->count();
     }
 
 
     public function render()
     {   
-        
-
         return view('livewire.dashboard.notifications');
     }
 }
