@@ -33,4 +33,10 @@ class HomepageController extends Controller
     public function categoryShow(Category $category){
         return view('products.categoryShow', compact('category'));
     }
+
+    public function setLanguage($language){
+        session()->put('language', $language);
+
+        return redirect()->back();
     }
+}

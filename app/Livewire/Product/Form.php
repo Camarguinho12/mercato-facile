@@ -37,7 +37,7 @@ class Form extends Component
 
         $this->cleanForm();
 
-        session()->flash('success', 'Prodotto pubblicato');
+        session()->flash('success', __('ui.prodottoInRevisione'));
     }
 
     public function cleanForm(){

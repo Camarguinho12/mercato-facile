@@ -26,14 +26,14 @@ class Revisor extends Component
         $productToUpdate= Product::find($id);
         $productToUpdate->setAccepted(true);
         $this->products=Product::whereNull('is_accepted')->orWhere('is_accepted', false)->get();
-        $this->showMessage=['display'=>true,'messageIsPositive'=>true,'message'=>'annuncio approvato con successo'];
+        $this->showMessage=['display'=>true,'messageIsPositive'=>true,'message'=>__('ui.approvato')];
     }
 
     public function denyProduct($id){
         $productToUpdate= Product::find($id);
         $productToUpdate->setAccepted(false);
         $this->products=Product::whereNull('is_accepted')->orWhere('is_accepted', false)->get();
-        $this->showMessage=['display'=>!$this->showMessage['display'],'messageIsPositive'=>false,'message'=>'annuncio rifiutato con successo'];
+        $this->showMessage=['display'=>!$this->showMessage['display'],'messageIsPositive'=>false,'message'=>__('ui.rifiutato')];
     }
 
 
