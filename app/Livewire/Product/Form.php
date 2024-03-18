@@ -36,7 +36,7 @@ class Form extends Component
     }
 
     public function store(){
-         $dd($this->validate());
+         dd($this->validate());
         $this->validate();
 
         $this->about = Category::find($this->category)->products()->create($this->validate());
