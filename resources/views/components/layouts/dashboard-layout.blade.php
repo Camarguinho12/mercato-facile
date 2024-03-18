@@ -11,7 +11,7 @@
     <body>
         <x-navbar/>
 		<div class="flex flex-col md:flex-row bg-gray-50">
-                <x-side-menu :notificationCount="$notificationCount"/>
+              
                 <div class="w-full">
                     {{ $slot }}
             </div>
