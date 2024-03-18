@@ -1,9 +1,9 @@
 <div>
-    @if (session('success'))
-        <div class="bg-green-100 border mt-4 border-green-400 text-green-700 px-4 flex">
+    @if (session('message'))
+        <div class="bg-green-100 border mt-4 border-green-400 text-green-700 px-4 flex items-center">
             <i class="fa-solid fa-check text-xl"></i>
             <p class="px-4 py-3 rounded-md my-2" role="alert">
-                {{ session('success') }} </p>
+                {{ session('message') }} </p>
         </div>
     @endif
     <h1 class="fade-top text-center my-8 text-4xl">Ciao {{Auth::user()->name}}, crea il tuo primo annuncio</h1>
@@ -12,10 +12,10 @@
         @csrf
 
         <!--select category-->
-        <div class="bg-white p-4 rounded-md md:w-2/4 xl:w-2/5">
+        <div class="fade-right bg-white p-4 rounded-md md:w-2/4 xl:w-2/5">
             <h2 class="text-xl">Seleziona la categoria</h2>
             <div class="relative flex flex-col mb-8 w-full mt-8">
-                <select wire:model.live="category_id" type="text" id="category"
+                <select wire:model="category_id" type="text" id="category"
                     class="peer h-10 w-full border rounded placeholder-transparent focus:outline-none focus:border-emerald-400 @error('category') border-red-600 focus:border-red-300 @enderror"
                     placeholder=" ">
                     <option value=""></option>
@@ -36,10 +36,10 @@
         <!--fine select category-->
 
         <!--input object-->
-        <div class="w-5/6 p-4 md:w-2/4 xl:w-2/5 mt-12 rounded-md bg-white">
+        <div class="fade-left w-5/6 p-4 md:w-2/4 xl:w-2/5 mt-12 rounded-md bg-white">
             <h2 class="text-xl">Inserisci l'oggetto da vendere</h2>
             <div class="relative flex flex-col mb-8 mt-8">
-                <input wire:model.live="object" type="text" id="object"
+                <input wire:model="object" type="text" id="object"
                     class="peer h-10 w-full border rounded border-gray-300 placeholder-transparent focus:outline-none focus:border-emerald-400 @error('object') border-red-600 focus:border-red-300 @enderror"
                     placeholder=" ">
                 <label for="object"
@@ -54,10 +54,10 @@
         <!--fine input object-->
 
         <!--input price-->
-        <div class="w-5/6 p-4 md:w-2/4 xl:w-2/5 mt-12 rounded-md bg-white">
+        <div class="fade-right w-5/6 p-4 md:w-2/4 xl:w-2/5 mt-12 rounded-md bg-white">
             <h2 class="text-xl">Inserisci il prezzo del tuo annuncio</h2>
             <div class="relative flex flex-col mb-8 w-full mt-8">
-                <input wire:model.live="price" type="text" id="price"
+                <input wire:model="price" type="text" id="price"
                     class="peer h-10 w-full border rounded border-gray-300 placeholder-transparent focus:outline-none focus:border-emerald-400 @error('price') border-red-600 focus:border-red-300 @enderror"
                     placeholder=" ">
                 <label for="price"
@@ -73,10 +73,10 @@
         <!--fine input price-->
 
         <!--input about-->
-        <div class="w-5/6 p-4 md:w-2/4 xl:w-2/5 mt-12 rounded-md bg-white">
+        <div class="fade-left w-5/6 p-4 md:w-2/4 xl:w-2/5 mt-12 rounded-md bg-white">
             <h2 class="text-xl">Inserisci una breve descrizione del tuo annuncio</h2>
             <div class="relative flex flex-col mb-8 w-full mt-8">
-                <textarea wire:model.live="about" type="text" id="about" rows="5"
+                <textarea wire:model="about" type="text" id="about" rows="5"
                     class="peer w-full border-2 rounded border-gray-300 placeholder-transparent focus:outline-none focus:border-emerald-400 @error('about') border-red-600 focus:border-red-300 @enderror"
                     placeholder=" "></textarea>
                 <label for="about"
@@ -131,7 +131,7 @@
         <!--button publica-->
         <div class="mt-6 flex items-center justify-center gap-x-6">
             <button type="submit"
-                class="bg-emerald-400 py-2 px-14 rounded-full hover:bg-emerald-200 transition-all" x-data @click="setTimeout(()=>{window.scrollTo({top: 0, behavior: 'smooth'})},350)"><i wire:loading class="fa-solid fa-spinner fa-spin me-2"></i>Pubblica</button>
+                class="bg-emerald-400 py-2 px-14 rounded-full hover:bg-emerald-200 transition-all" x-data @click="setTimeout(()=>{window.scrollTo({top: 0, behavior: 'smooth'})},1000)"><i wire:loading class="fa-solid fa-spinner fa-spin me-2"></i>Pubblica</button>
         </div>
         <!--fine bottom publica-->
 
