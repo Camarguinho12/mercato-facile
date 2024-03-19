@@ -2,21 +2,21 @@
     <div class="container mx-auto pt-4 flex justify-center md:justify-between">
         <div>
             <h2 class="text-slate-600 text-2xl">Mercato facile</h2>
-            <p class="mt-4">Chi siamo</p>
-            <p class="mt-4">Lavori</p>
-            <p class="mt-4">Sostenibilità</p>
+            <p class="mt-4">{{__('ui.chiSiamo')}}</p>
+            <p class="mt-4">{{__('ui.lavori')}}</p>
+            <p class="mt-4">{{__('ui.sostenibilita')}}</p>
         </div>
         <div class="hidden md:block">
-            <h2 class="text-slate-600 text-2xl">Scopri</h2>
-            <p class="mt-4">Come funziona</p>
-            <p class="mt-4">Notizie</p>
+            <h2 class="text-slate-600 text-2xl">{{__('ui.scopri')}}</h2>
+            <p class="mt-4">{{__('ui.comeFunziona')}}</p>
+            <p class="mt-4">{{__('ui.notizie')}}</p>
             <p class="mt-4">Mercato facile pro</p>
         </div>
         <div class="hidden md:block">
-            <h2 class="text-slate-600 text-2xl">Assistenza</h2>
-            <p class="mt-4">Acquistare</p>
-            <p class="mt-4">Vendere</p>
-            <p class="mt-4">sicurezza e affidabilità</p>
+            <h2 class="text-slate-600 text-2xl">{{__('ui.assistenza')}}</h2>
+            <p class="mt-4">{{__('ui.acquisitare')}}</p>
+            <p class="mt-4">{{__('ui.vendere')}}</p>
+            <p class="mt-4">{{__('ui.sicurezzaEaffidabilita')}}</p>
         </div>
     </div>
     <div class="mt-8 border-b border-t border-slate-400 py-8 flex md:justify-between justify-center container mx-auto">

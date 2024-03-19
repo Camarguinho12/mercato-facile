@@ -7,7 +7,7 @@
     </div>
     <div>
         <div class="text-xs">
-            Scarica dall'
+            {{__('ui.downloadFrom')}}
         </div>
         <div class="-mt-1 font-sans text-xl font-semibold">
             App Store
