@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Product;
 
+use App\Jobs\ResizeImage;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
@@ -36,14 +37,19 @@ class Form extends Component
     }
 
     public function store(){
-         $dd($this->validate());
+        //dd ($this->validate());
         $this->validate();
 
-        $this->about = Category::find($this->category)->products()->create($this->validate());
+        $this->object = Category::find($this->category)->products()->create($this->validate());
         if(count($this->images)){
             foreach ($this->images as $image) {
-                $this->product->images()->create(['path' => $image->store('image','public')]);
+                // $this->product->images()->create(['path' => $image->store('image','public')]);
+                $newFileName = "products/{$this->product->id}";
+                $newImage =$this->product-> images()->create(['path' => $image->store($newFileName,'public')]);
+                
+                dispatch(new ResizeImage($newImage->path, 400,300));
             }
+            File::deleteDirectory(storage_path('/app/livewire-tmp'));
         }
 
         Product::create([

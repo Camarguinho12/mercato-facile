@@ -9,7 +9,9 @@
                     </a>
                 </button>
             </div>
-            <img class="fade-right h-full md:w-1/3" src="{{ asset('images/business-people.jpg') }}" alt="img">
+            {{-- <img class="fade-right h-full md:w-1/3" src="{{!$product -> images() -> get () -> isEmpity() ? $product -> images() -> first() ->getUrl(400, 300)  --}}
+            asset('images/business-people.jpg')
+             }}" alt="img">
         </section>
     </main>
     <section class="container mx-auto">
