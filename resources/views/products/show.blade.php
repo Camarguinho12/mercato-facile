@@ -18,7 +18,14 @@
                     <button class="w-24 border border-emerald-300 rounded-full">Chat</button>
                 </div>
             </div>
-            <img class="my-8 rounded-lg" src="{{ asset('images/product-placeholder.jpg') }}" alt="">
+            {{-- <x-carousel /> --}}
+            <div class="grid grid-cols-{{$product->images->count()}} my-8">
+                @forelse ($product->images as $image)
+                    <img  class="rounded-lg" src="{{Storage::url($image->path)}}" alt="">
+                    @empty
+                    <img class="rounded-lg" src="{{asset('images/product-placeholder.jpg')}}" alt="">
+                @endforelse
+            </div>
             <span class="text-4xl">{{ $product->price }} €</span>
             <h3 class="mt-4 text-3xl">{{ $product->object }}</h3>
             <span class="inline-block bg-slate-200 rounded-full p-1">{{ __('ui.' . $product->category->title) }}</span>
