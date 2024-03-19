@@ -135,7 +135,7 @@
                         <label for="file-upload"
                             class="relative cursor-pointer rounded-md font-semibold text-emerald-600 focus-within:outline-none hover:text-emerald-400">
                             <span>{{ __('ui.caricaFile') }}</span>
-                            <input wire:model='images' id="file-upload" name="image" type="file" multiple
+                            <input wire:model.live='temporary_images' id="file-upload" name="image" type="file" multiple
                                 class="sr-only" />
                         </label>
                         <p class="pl-1">{{ __('ui.trascinaRilascia') }}</p>
@@ -144,6 +144,9 @@
                     <p class="text-xs leading-5 text-gray-600">PNG, JPG, JPEG up to 5MB</p>
                 </div>
             </div>
+            @error('temporary_images.*')
+            <span class="text-red-500">{{ $message }}</span>
+            @enderror
         </div>
         <!--fine upload file-->
 

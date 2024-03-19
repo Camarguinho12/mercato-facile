@@ -31,13 +31,13 @@ class Form extends Component
             'object' => 'string|required|min:3',
             'price' => 'required|decimal:2',
             'about' => 'required|min:10',
-            'images.*' => 'image|max:2048',
-            'temporary_images.*' => 'image|max1024',
+            'images.*' => 'image|max:512',
+            // 'temporary_images.*' => 'image|max1024',
         ];
     }
 
     public function store(){
-        // dd($this->images);
+        dd($this->validate());
         $this->validate();
         $this->product = Product::create([
                 'user_id' => Auth::user()->id,
@@ -85,7 +85,7 @@ class Form extends Component
         return view('livewire.product.form', compact('categories'));
     }
 
-    public function updateTemporaryImages()
+    public function updatedTemporaryImages()
     {
         if($this->validate([
             'temporary_images.*' => 'image|max:1024'
@@ -95,6 +95,7 @@ class Form extends Component
             }
         }
     }
+    
     public function removeImage ($key)
     {
         if(in_array($key, array_keys($this->images))) {
