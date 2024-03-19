@@ -7,7 +7,7 @@ use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\Features\SupportFileUploads\WithFileUploads;
-use PhpParser\Node\UseItem;
+
 
 class Form extends Component
 {
@@ -21,6 +21,7 @@ class Form extends Component
     public $temporary_images;
     public $images = [];
     public $image;
+    public $product;
     public $form_id;
 
 
@@ -30,31 +31,30 @@ class Form extends Component
             'object' => 'string|required|min:3',
             'price' => 'required|decimal:2',
             'about' => 'required|min:10',
-            'images.*' => 'image|max1024',
+            'images.*' => 'image|max:2048',
             'temporary_images.*' => 'image|max1024',
         ];
     }
 
     public function store(){
-         dd($this->validate());
-        $this->validate();
-
-        $this->about = Category::find($this->category)->products()->create($this->validate());
+        // dd($this->images);
+        // $this->validate();
+        // $this->product = Category::find($this->category_id)->products()->create($this->validate());
         if(count($this->images)){
             foreach ($this->images as $image) {
                 $this->product->images()->create(['path' => $image->store('image','public')]);
             }
         }
 
-        Product::create([
-            'user_id' => Auth::user()->id,
-            'category_id' => $this->category_id,
-            'object' => $this->object,
-            'price' => $this->price,
-            'about' => $this->about
-        ]);
+        // Product::create([
+        //     'user_id' => Auth::user()->id,
+        //     'category_id' => $this->category_id,
+        //     'object' => $this->object,
+        //     'price' => $this->price,
+        //     'about' => $this->about
+        // ]);
 
-        $this->cleanForm();
+        // $this->cleanForm();
 
         session()->flash('success', 'Prodotto pubblicato');
     }

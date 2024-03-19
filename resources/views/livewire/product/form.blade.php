@@ -117,7 +117,7 @@
                         <label for="file-upload"
                             class="relative cursor-pointer rounded-md font-semibold text-emerald-600 focus-within:outline-none hover:text-emerald-400">
                             <span>Upload a file</span>
-                            <input id="file-upload" name="image" type="file" class="sr-only" />
+                            <input wire:model='images' id="file-upload" name="image" type="file" multiple class="sr-only"/>
                         </label>
                         <p class="pl-1">or drag and drop</p>
                     </div>
