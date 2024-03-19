@@ -38,23 +38,22 @@ class Form extends Component
 
     public function store(){
         // dd($this->images);
-        // $this->validate();
-        // $this->product = Category::find($this->category_id)->products()->create($this->validate());
+        $this->validate();
+        $this->product = Product::create([
+                'user_id' => Auth::user()->id,
+                'category_id' => $this->category_id,
+                'object' => $this->object,
+                'price' => $this->price,
+                'about' => $this->about
+            ]);
+
         if(count($this->images)){
             foreach ($this->images as $image) {
                 $this->product->images()->create(['path' => $image->store('image','public')]);
             }
         }
-
-        // Product::create([
-        //     'user_id' => Auth::user()->id,
-        //     'category_id' => $this->category_id,
-        //     'object' => $this->object,
-        //     'price' => $this->price,
-        //     'about' => $this->about
-        // ]);
-
-        // $this->cleanForm();
+      
+        $this->cleanForm();
 
         session()->flash('success', __('ui.prodottoInRevisione'));
     }
