@@ -21,11 +21,11 @@
             <img class="my-8 rounded-lg" src="{{ asset('images/product-placeholder.jpg') }}" alt="">
             <span class="text-4xl">{{ $product->price }} €</span>
             <h3 class="mt-4 text-3xl">{{ $product->object }}</h3>
-            <span class="inline-block bg-slate-200 rounded-full p-1">{{ $product->category->title }}</span>
+            <span class="inline-block bg-slate-200 rounded-full p-1">{{ __('ui.' . $product->category->title) }}</span>
             <p class="mt-4 py-8 border-t-2 border-b-2 border-slate-100">{{ $product->about }}</p>
 			<div class="rounded bg-green-200 flex text-green-500 p-8 items-center gap-4 mt-8">
 				<i class="fa-solid fa-earth-americas text-3xl"></i>
-				<p>Quando acquisti articoli di seconda mano risparmi denaro e aiuti il pianeta</p>
+				<p>{{ __('ui.fraseSostenibilita')}}</p>
 			</div>
         </div>
     </main>

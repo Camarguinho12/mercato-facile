@@ -13,7 +13,7 @@
     </div>
     <div>
         <div class="text-xs">
-            Ottieni in 
+            {{__('ui.downloadFrom')}}
         </div>
         <div class="-mt-1 font-sans text-xl font-semibold">
             Google Play

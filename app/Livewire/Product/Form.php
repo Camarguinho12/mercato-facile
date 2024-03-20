@@ -8,7 +8,7 @@ use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\Features\SupportFileUploads\WithFileUploads;
-use PhpParser\Node\UseItem;
+
 
 class Form extends Component
 {
@@ -22,6 +22,7 @@ class Form extends Component
     public $temporary_images;
     public $images = [];
     public $image;
+    public $product;
     public $form_id;
 
 
@@ -31,16 +32,22 @@ class Form extends Component
             'object' => 'string|required|min:3',
             'price' => 'required|decimal:2',
             'about' => 'required|min:10',
-            'images.*' => 'image|max1024',
-            'temporary_images.*' => 'image|max1024',
+            'images.*' => 'image|max:512',
+            // 'temporary_images.*' => 'image|max1024',
         ];
     }
 
     public function store(){
-        //dd ($this->validate());
+        dd($this->validate());
         $this->validate();
+        $this->product = Product::create([
+                'user_id' => Auth::user()->id,
+                'category_id' => $this->category_id,
+                'object' => $this->object,
+                'price' => $this->price,
+                'about' => $this->about
+            ]);
 
-        $this->object = Category::find($this->category)->products()->create($this->validate());
         if(count($this->images)){
             foreach ($this->images as $image) {
                 // $this->product->images()->create(['path' => $image->store('image','public')]);
@@ -51,18 +58,10 @@ class Form extends Component
             }
             File::deleteDirectory(storage_path('/app/livewire-tmp'));
         }
-
-        Product::create([
-            'user_id' => Auth::user()->id,
-            'category_id' => $this->category_id,
-            'object' => $this->object,
-            'price' => $this->price,
-            'about' => $this->about
-        ]);
-
+      
         $this->cleanForm();
 
-        session()->flash('success', 'Prodotto pubblicato');
+        session()->flash('success', __('ui.prodottoInRevisione'));
     }
 
     public function cleanForm(){
@@ -92,7 +91,7 @@ class Form extends Component
         return view('livewire.product.form', compact('categories'));
     }
 
-    public function updateTemporaryImages()
+    public function updatedTemporaryImages()
     {
         if($this->validate([
             'temporary_images.*' => 'image|max:1024'
@@ -102,6 +101,7 @@ class Form extends Component
             }
         }
     }
+    
     public function removeImage ($key)
     {
         if(in_array($key, array_keys($this->images))) {

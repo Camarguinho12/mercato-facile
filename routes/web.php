@@ -58,3 +58,6 @@ Route::get('/auth/{provider}/redirect', [SocialiteProviderController::class, 're
 
 //Socialite callback
 Route::get('/auth/{provider}/callback', [SocialiteProviderController::class, 'providerCallback'])->name('social.callback');
+
+//Cambia Idioma
+Route::post('/lingua/{language}', [HomepageController::class, 'setLanguage'])->name('set-language');
