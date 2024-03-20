@@ -18,7 +18,11 @@
                     <button class="w-24 border border-emerald-300 rounded-full">Chat</button>
                 </div>
             </div>
-            <img class="my-8 rounded-lg" src="{{ asset('images/product-placeholder.jpg') }}" alt="">
+            @if ($product->images->count()>1)
+                <x-carousel :images="$product->images"/>
+            @else
+                <img  class="rounded-lg my-10" src="{{isset($product->images->first()->path) ? Storage::url($product->images->first()->path) : asset('images/product-placeholder.jpg')}}" alt="">  
+            @endif
             <span class="text-4xl">{{ $product->price }} €</span>
             <h3 class="mt-4 text-3xl">{{ $product->object }}</h3>
             <span class="inline-block bg-slate-200 rounded-full p-1">{{ __('ui.' . $product->category->title) }}</span>
