@@ -2,10 +2,12 @@
 
 namespace App\Livewire\Product;
 
-use App\Models\Category;
 use App\Models\Product;
-use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use App\Models\Category;
+use App\Jobs\ResizeImage;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Livewire\Features\SupportFileUploads\WithFileUploads;
 
 
@@ -31,12 +33,13 @@ class Form extends Component
             'object' => 'string|required|min:3',
             'price' => 'required|decimal:2',
             'about' => 'required|min:10',
-            'images.*' => 'image|max:512',
-            // 'temporary_images.*' => 'image|max1024',
+            'images.*' => 'image|max:4096',
+            'temporary_images.*' => 'image|max:4096',
         ];
     }
 
     public function store(){
+        //dd($this->validate());
         $this->validate();
         $this->product = Product::create([
                 'user_id' => Auth::user()->id,
@@ -48,8 +51,13 @@ class Form extends Component
 
         if(count($this->images)){
             foreach ($this->images as $image) {
-                $this->product->images()->create(['path' => $image->store('image','public')]);
+                // $this->product->images()->create(['path' => $image->store('image','public')]);
+                $newFileName = "products/{$this->product->id}";
+                $newImage =$this->product-> images()->create(['path' => $image->store($newFileName,'public')]);
+                
+                dispatch(new ResizeImage($newImage->path, 400,300));
             }
+            File::deleteDirectory(storage_path('/app/livewire-tmp'));
         }
       
         $this->cleanForm();
@@ -87,12 +95,15 @@ class Form extends Component
     public function updatedTemporaryImages()
     {
         if($this->validate([
-            'temporary_images.*' => 'image|max:1024'
+            'temporary_images.*' => 'image|max:4096'
         ])) {
             foreach($this->temporary_images as $image) {
                 $this->images[] = $image;
             }
         }
+    }
+    public function updated($propertyName){
+        $this->validateOnly($propertyName);
     }
     
     public function removeImage ($key)

@@ -15,7 +15,7 @@
     @endif
     <h1 class="fade-top text-center my-8 text-4xl">{{ __('ui.ciao') }} {{ Auth::user()->name }},
         {{ __('ui.fraseHForm') }}</h1>
-    <form wire:submit='store' enctype="multipart/form-data" class="flex flex-col items-center my-8">
+    <form wire:submit.prevent='store' enctype="multipart/form-data" class="flex flex-col items-center my-8">
 
         @csrf
 
@@ -135,7 +135,7 @@
                         <label for="file-upload"
                             class="relative cursor-pointer rounded-md font-semibold text-emerald-600 focus-within:outline-none hover:text-emerald-400">
                             <span>{{ __('ui.caricaFile') }}</span>
-                            <input wire:model.live='temporary_images' id="file-upload" name="image" type="file" multiple
+                            <input wire:model='temporary_images' id="file-upload" name="images" type="file" multiple
                                 class="sr-only" />
                         </label>
                         <p class="pl-1">{{ __('ui.trascinaRilascia') }}</p>

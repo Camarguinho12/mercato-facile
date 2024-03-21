@@ -9,8 +9,8 @@
                     </a>
                 </button>
             </div>
-            <img class="fade-right h-full md:w-1/3" src="{{ asset('images/business-people.jpg') }}" alt="img">
-        </section>
+               <img class="fade-right h-full md:w-1/3" src="{{ asset('images/business-people.jpg')}}" alt="img"> 
+        </section> 
     </main>
     <section class="container mx-auto">
         <h2 class="text-4xl text-slate-600 mt-8">{{__('ui.annunciRecenti')}}</h2>
@@ -32,4 +32,6 @@
             @endforeach
         </div>
     </section>
+   
+@include('cookie-consent::index')
 </x-layouts.app>
