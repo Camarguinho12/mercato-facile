@@ -1,10 +1,9 @@
 <article class="rounded-lg text-slate-400 border ">
     <a href="{{ route('show', $product->id) }}">
         <div class="overflow-hidden rounded-lg">
-            <img class="rounded-lg hover:scale-110 duration-300" src="{{ asset('images/product-placeholder.jpg') }}"
+            <img class="rounded-lg hover:scale-110 duration-300" src="{{isset($product->images->first()->path) ? Storage::url($product->images->first()->path) : asset('images/product-placeholder.jpg') }}"
                 alt="">
         </div>
-        <p>{{$product->images->first()->path ?? 'ciao'}}</p>
         <div class="flex justify-between mt-2 p-2">
             <span class="font-bold">{{ $product->price ?? 'esempio' }} €</span>
             <p>{{__('ui.' . $product->category->title) ?? 'esempio' }}</p>

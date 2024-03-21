@@ -21,9 +21,10 @@
             @if ($product->images->count()>1)
                 <x-carousel :images="$product->images"/>
             @else
-                <img  class="rounded-lg my-10" 
+                
                   {{-- src="{{!$product->images()->get()->isEmpty() ? $product->images()->first()->getUrl(400, 300) : 'http://picsum.photo/200'}}" alt="foto">  --}}
-                src="{{isset($product->images->first()->path) ? Storage::url($product->images->first()->getUrl(400, 300)) : asset('images/product-placeholder.jpg')}}" alt="">  
+                  <img class="rounded-lg hover:scale-110 duration-300" src="{{isset($product->images->first()->path) ? Storage::url($product->images->first()->path) : asset('images/product-placeholder.jpg') }}"
+                  alt="">
             @endif
             <span class="text-4xl">{{ $product->price }} €</span>
             <h3 class="mt-4 text-3xl">{{ $product->object }}</h3>
