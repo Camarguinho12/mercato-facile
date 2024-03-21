@@ -37,7 +37,6 @@ class Form extends Component
     }
 
     public function store(){
-        dd($this->validate());
         $this->validate();
         $this->product = Product::create([
                 'user_id' => Auth::user()->id,
@@ -91,7 +90,7 @@ class Form extends Component
             'temporary_images.*' => 'image|max:1024'
         ])) {
             foreach($this->temporary_images as $image) {
-                $this->image[] = $image;
+                $this->images[] = $image;
             }
         }
     }
