@@ -15,7 +15,7 @@
         "laravel/socialite": "^5.12",
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^3.4",
-        "spatie/image": "^3.4",
+        "spatie/image": "2.2.7",
         "spatie/laravel-cookie-consent": "^3.3",
         "teamtnt/laravel-scout-tntsearch-driver": "*"
     },
