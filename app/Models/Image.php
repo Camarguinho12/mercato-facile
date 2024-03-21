@@ -17,11 +17,11 @@ class Image extends Model
         return $this->belongsTo(Product::class);
     }
 
-    public static function getUrlByFilePath($filepath, $w = null, $h = null){
-        if{!$w && !$h}{
-            return Storage::url($filepath);
+    public static function getUrlByFilePath($filePath, $w = null, $h = null){
+        if(!$w && !$h){
+            return Storage::url($filePath);
         }
-        $path = dirname($filepath);
+        $path = dirname($filePath);
         $filename = basename($filePath);
         $file = "{$path}/crop_{$w}x{$h}_{$filename}";
 
