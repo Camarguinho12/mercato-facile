@@ -91,7 +91,7 @@ class Form extends Component
             'temporary_images.*' => 'image|max:1024'
         ])) {
             foreach($this->temporary_images as $image) {
-                $this->image[] = $image;
+                $this->images[] = $image;
             }
         }
     }

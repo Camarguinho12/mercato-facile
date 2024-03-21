@@ -10,7 +10,7 @@ return [
     "fraseHeader2" => "sem levantar do sofá",
     "vendiSubito" => "Venda agora",
     "annunciRecenti" => "Os nossos produtos mais recentes",
-    "trovaAuto" => "Encontre o carro que melhor se adapta às suas necessidades",
+    "annunciAuto" => "Encontre o carro que melhor se adapta às suas necessidades",
     "annunciHiTech" => "Os itens de alta tecnologia dos sonhos",
 
     //Card
