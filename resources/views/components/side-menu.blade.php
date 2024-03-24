@@ -31,6 +31,7 @@
             <li class="md:mb-10 relative">
                 <a wire:navigate href="{{ route('dashboard.notifications') }}"> 
                     <i class="{{ request()->is('dashboard/notifiche') ? 'text-green-500' : '' }} fa-solid fa-envelope ps-1 size-8 text-2xl hover:rotate-12 duration-300 relative">
+                        <x-notification-badge/>
                     </i>
                 </a>
                 <span class="absolute opacity-0 text-sm ps-1 top-1">{{__('ui.leTueNotifiche')}}</span>

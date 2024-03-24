@@ -19,18 +19,9 @@
                 <x-product-card :product='$product' />
             @endforeach
         </div>
-        <h2 class="text-4xl text-slate-600 mt-8">{{__('ui.annunciAuto')}}</h2>
-        <div class="mt-8 grid grid-cols-1 md:grid-cols-5 gap-4">
-            @foreach ($motori as $product)
-                <x-product-card :product='$product' />
-            @endforeach
-        </div>
-        <h2 class="text-4xl text-slate-600 mt-8">{{__('ui.annunciHiTech')}}</h2>
-        <div class="mt-8 grid grid-cols-1 md:grid-cols-5 gap-4">
-            @foreach ($tecnologia as $product)
-                <x-product-card :product='$product' />
-            @endforeach
-        </div>
+        <h2 class="text-4xl text-slate-600 my-8">{{__('ui.annunciAuto')}}</h2>
+        <x-masonry/>
+        
     </section>
    
 @include('cookie-consent::index')

@@ -17,10 +17,12 @@ class RevisorFeedback extends Notification
      */
 
     public $message;
+    public $typeOfNotification;
 
-    public function __construct($message)
+    public function __construct($message, $typeOfNotification)
     {
        $this->message=$message;
+       $this->typeOfNotification=$typeOfNotification;
     }
 
     /**
@@ -52,7 +54,8 @@ class RevisorFeedback extends Notification
     public function toArray(object $notifiable): array
     {
         return [
-            'message'=>$this->message
+            'message'=>$this->message,
+            'typeOfNotification'=>$this->typeOfNotification
         ];
     }
 }

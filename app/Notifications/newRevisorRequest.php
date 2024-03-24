@@ -17,11 +17,13 @@ class newRevisorRequest extends Notification
 
     public $user_id;
     public $message;
+    public $typeOfNotification;
 
-    public function __construct($id,$message)
+    public function __construct($id,$message,$typeOfNotification)
     {
         $this->user_id=$id;
         $this->message=$message;
+        $this->typeOfNotification=$typeOfNotification;
     }
 
     /**
@@ -54,7 +56,8 @@ class newRevisorRequest extends Notification
     {
         return [
             'message'=>$this->message,
-            'id'=>$this->user_id
+            'id'=>$this->user_id,
+            'typeOfNotification'=>$this->typeOfNotification
         ];
     }
 }

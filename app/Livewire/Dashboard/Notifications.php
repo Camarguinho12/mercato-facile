@@ -31,7 +31,7 @@ class Notifications extends Component
             $userToBeAccepted->is_revisor=true;
             $userToBeAccepted->save();
             $this->setMessage('utente accettato come revisore');
-            $userToBeAccepted->notify(new RevisorFeedback('sei stato accettato come revisore'));
+            $userToBeAccepted->notify(new RevisorFeedback('sei stato accettato come revisore','revisor_confirmation'));
         }
     }
 
@@ -40,7 +40,14 @@ class Notifications extends Component
         if($userToBeDenied->is_revisor == 0){
             $this->setMessage('utente già senza privilegi da amministratore');
             return;
+        }else{
+            $this->setMessage('utente rifiutato');
         }
+    }
+
+    public function markAsReadNotifications(){
+        Auth::user()->unreadNotifications->markAsRead();
+        $this->redirect(route('dashboard.notifications'));
     }
 
     public function setMessage(String $message):void{

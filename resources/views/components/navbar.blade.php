@@ -1,16 +1,16 @@
 <nav>
+    <div class="flex justify-center gap-10">
+        <div><x-language language="it" nation="it"/></div>
+    
+        <div><x-language language="en" nation="us"/></div>
+    
+        <div><x-language language="pt-br" nation="br"/></div>
+    </div>
     <div class="flex p-6 gap-4 items-center">
         <div class="hidden md:block">
-            <a href="{{ route('homepage') }}"><img src="{{ asset('images/logo.png') }}" class="rounded-full size-10"></a>
+            <a href="{{ route('homepage') }}"><img src="{{ asset('images/logo.png') }}" class="rounded-lg w-auto max-h-16"></a>
         </div>
         <livewire:search-bar />
-        
-        <div><x-language language="it" nation="it"/></div>
-
-        <div><x-language language="en" nation="us"/></div>
-
-        <div><x-language language="pt-br" nation="br"/></div>
-
         <div class="text-white items-center flex">
             @auth
                 <livewire:auth.logout />

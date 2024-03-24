@@ -37,7 +37,7 @@ class RevisorController extends Controller
         $revisorsUsers = User::where('is_revisor', true)->get();
         $currentUserName = Auth::user()->name;
         foreach ($revisorsUsers as $revisor) {
-            $revisor->notify(new newRevisorRequest(Auth::id(), "l'utente {$currentUserName} ha chiesto di diventare revisore"));
+            $revisor->notify(new newRevisorRequest(Auth::id(), "l'utente {$currentUserName} ha chiesto di diventare revisore", 'revisor-request'));
         }
         return redirect()->back()->with('message', 'Hai richiesto di diventare revisore');
     }

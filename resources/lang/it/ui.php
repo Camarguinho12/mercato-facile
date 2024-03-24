@@ -13,7 +13,7 @@ return [
     "fraseHeader2" => "senza alzarti dal divano",
     "vendiSubito" => "Vendi subito",
     "annunciRecenti" => "I nostri articoli più recenti",
-    "annunciAuto" => "Trova l'automobile più adatta alle tue esigenze",
+    "annunciAuto" => "Gli articoli più venduti",
     "annunciHiTech" => "Gli articoli hi-tech da sogno",
 
     //Card

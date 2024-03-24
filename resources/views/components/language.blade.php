@@ -2,6 +2,6 @@
     @csrf
 
     <button type="submit">
-        <span class="fi fi-{{$nation}}"></span>
+        <span class="fi fi-{{$nation}} text-xl mt-4 rounded-full"></span>
     </button>
 </form>
