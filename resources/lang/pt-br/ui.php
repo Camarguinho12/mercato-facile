@@ -10,8 +10,7 @@ return [
     "fraseHeader2" => "sem levantar do sofá",
     "vendiSubito" => "Venda agora",
     "annunciRecenti" => "Os nossos produtos mais recentes",
-    "annunciAuto" => "Encontre o carro que melhor se adapta às suas necessidades",
-    "annunciHiTech" => "Os itens de alta tecnologia dos sonhos",
+    "annunciAuto" => "Itens mais vendidos",
 
     //Card
     "Motori" => "Veículos",
@@ -109,4 +108,7 @@ return [
 
     //Form Controller
     "prodottoInRevisione" => "O produto será publicado depois de ser revisionado",
+
+    //Notifiche
+    
 ];

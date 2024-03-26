@@ -10,8 +10,7 @@ return [
     "fraseHeader2" => "without leaving the couch",
     "vendiSubito" => "Sell Now",
     "annunciRecenti" => "Our most recent articles",
-    "annunciAuto" => "Find the car that best suits your needs",
-    "annunciHiTech" => "The dream hi-tech items",
+    "annunciAuto" => "Best-selling items",
 
     //Card
     "Motori" => "Engines",

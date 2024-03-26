@@ -1,7 +1,7 @@
 <article class="rounded-lg text-slate-400 bg-slate-100">
     <a href="{{ route('show', $product->id) }}">
         <div class="overflow-hidden rounded-lg max-h-48">
-            <img class="rounded-lg hover:scale-110 duration-300 min-h-full" src="{{isset($product->images->first()->path) ? Storage::url($product->images->first()->path) : asset('images/product-placeholder.jpg') }}"
+            <img class="rounded-lg hover:scale-110 duration-300 min-h-full" src="{{isset($product->images->first()->path) ? $product->images->first()->getUrl(400,300) : asset('images/product-placeholder.jpg') }}"
                 alt="">
         </div>
         <div class="flex justify-between mt-2 p-2">

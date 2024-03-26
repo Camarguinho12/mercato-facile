@@ -1,7 +1,8 @@
 <article class="rounded-lg text-slate-400 border relative">
     <a href="{{ route('show', $product->id) }}">
         <div class="overflow-hidden rounded-lg">
-            <img class="rounded-lg hover:scale-110 duration-300" src="{{isset($product->images->first()->path) ? Storage::url($product->images->first()->path) : asset('images/product-placeholder.jpg') }}"
+            <img class="rounded-lg hover:scale-110 duration-300"
+                src="{{ isset($product->images->first()->path) ? $product->images->first()->getUrl(400,300) : asset('images/product-placeholder.jpg') }}"
                 alt="">
         </div>
         <div class="flex justify-between mt-2">
@@ -10,12 +11,27 @@
         </div>
         <h3 class="mt-2">{{ $product->object ?? 'esempio' }}</h3>
     </a>
-        <div class="flex">
-            <div class="flex-1">
-                <button type="submit" wire:click='$parent.validateProduct({{$product->id}})' class="bg-emerald-200 rounded p-2 w-full"><i wire:loading class="fa-solid fa-spinner fa-spin me-2"></i>{{__('ui.accetta')}}</button>
-            </div>
-            <div class="flex-1">
-                <button wire:click='$parent.denyProduct({{$product->id}})' class="bg-red-200 flex-1 p-2 w-full"><i wire:loading class="fa-solid fa-spinner fa-spin me-2"></i>{{__('ui.rifiuta')}}</button>
-            </div>
+
+    <div>
+        <span class="{{$product->images->first()->adult}}"></span>
+        <span class="{{$product->images->first()->medical}}"></span>
+        <span class="{{$product->images->first()->spoof}}"></span>
+        <span class="{{$product->images->first()->violence}}"></span>
+        <span class="{{$product->images->first()->racy}}"></span>
+    </div>
+
+    <div class="flex">
+        <div class="flex-1">
+            <button type="submit" wire:click='$parent.validateProduct({{ $product->id }})'
+                class="bg-emerald-200 rounded p-2 w-full"><i wire:loading
+                    class="fa-solid fa-spinner fa-spin me-2"></i>{{ __('ui.accetta') }}</button>
         </div>
+
+        <div class="flex-1">
+            <button wire:click='$parent.denyProduct({{ $product->id }})' class="bg-red-200 flex-1 p-2 w-full"><i
+                    wire:loading class="fa-solid fa-spinner fa-spin me-2"></i>{{ __('ui.rifiuta') }}</button>
+        </div>
+    </div>
+
+
 </article>

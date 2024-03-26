@@ -14,7 +14,6 @@ return [
     "vendiSubito" => "Vendi subito",
     "annunciRecenti" => "I nostri articoli più recenti",
     "annunciAuto" => "Gli articoli più venduti",
-    "annunciHiTech" => "Gli articoli hi-tech da sogno",
 
     //Card
     "Motori" => "Motori",
