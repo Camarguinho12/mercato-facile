@@ -2,7 +2,7 @@
     <a href="{{ route('show', $product->id) }}">
         <div class="overflow-hidden rounded-lg">
             <img class="rounded-lg hover:scale-110 duration-300"
-                src="{{ isset($product->images->first()->path) ? $product->images->first()->getUrl(400,300) : asset('images/product-placeholder.jpg') }}"
+                src="{{ isset($product->images->first()->path) ? $product->images->first()->getUrl(400, 300) : asset('images/product-placeholder.jpg') }}"
                 alt="">
         </div>
         <div class="flex justify-between mt-2">
@@ -12,24 +12,27 @@
         <h3 class="mt-2">{{ $product->object ?? 'esempio' }}</h3>
     </a>
 
-    <div>
-        <span class="{{$product->images->first()->adult}}"></span>
-        <span class="{{$product->images->first()->medical}}"></span>
-        <span class="{{$product->images->first()->spoof}}"></span>
-        <span class="{{$product->images->first()->violence}}"></span>
-        <span class="{{$product->images->first()->racy}}"></span>
+    <div class="flex justify-center my-6">
+        @if (isset($product->images->first()->path))
+            <span class="{{ $product->images->first()->adult }} mx-2"></span>
+            <span class="{{ $product->images->first()->medical }} mx-2"></span>
+            <span class="{{ $product->images->first()->spoof }} mx-2"></span>
+            <span class="{{ $product->images->first()->violence }}  mx-2"></span>
+            <span class="{{ $product->images->first()->racy }} mx-2"></span>
+        @endif
     </div>
 
     <div class="flex">
         <div class="flex-1">
             <button type="submit" wire:click='$parent.validateProduct({{ $product->id }})'
-                class="bg-emerald-200 rounded p-2 w-full"><i wire:loading
-                    class="fa-solid fa-spinner fa-spin me-2"></i>{{ __('ui.accetta') }}</button>
+                class="group hover:bg-emerald-500 hover:first:text-white duration-300 rounded p-2 w-full"><i
+                    class="fa-solid fa-check group-hover:text-white text-emerald-500 text-2xl mx-10"></i></button>
         </div>
 
         <div class="flex-1">
-            <button wire:click='$parent.denyProduct({{ $product->id }})' class="bg-red-200 flex-1 p-2 w-full"><i
-                    wire:loading class="fa-solid fa-spinner fa-spin me-2"></i>{{ __('ui.rifiuta') }}</button>
+            <button wire:click='$parent.denyProduct({{ $product->id }})'
+                class=" hover:bg-red-500 rounded group duration-300 flex-1 p-2 w-full"><i
+                    class="fa-regular fa-circle-xmark group-hover:text-white text-red-500 text-2xl"></i></button>
         </div>
     </div>
 

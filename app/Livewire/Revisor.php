@@ -30,8 +30,8 @@ class Revisor extends Component
     }
 
     public function denyProduct($id){
-        $productToUpdate= Product::find($id);
-        $productToUpdate->setAccepted(false);
+        Product::destroy($id);
+        // $productToUpdate->setAccepted(false); -> con questa riga si aggiorna il prodotto
         $this->products=Product::whereNull('is_accepted')->orWhere('is_accepted', false)->get();
         $this->showMessage=['display'=>!$this->showMessage['display'],'messageIsPositive'=>false,'message'=>__('ui.rifiutato')];
     }

@@ -37,9 +37,9 @@
                 <span class="absolute opacity-0 text-sm ps-1 top-1">{{__('ui.leTueNotifiche')}}</span>
             </li>
 
-            <li class="md:mb-10 relative text-yellow-500"><i
+            {{-- <li class="md:mb-10 relative text-yellow-500"><i
                     class="fa-solid fa-face-grin-stars ps-1 size-8 text-2xl hover:rotate-12 duration-300"></i><span
-                    class="absolute opacity-0 text-sm ps-1 top-1 text-yellow-500">{{__('ui.abbonamentoPremium')}}</span></li>
+                    class="absolute opacity-0 text-sm ps-1 top-1 text-yellow-500">{{__('ui.abbonamentoPremium')}}</span></li> --}}
         </ul>
     </div>
 </div>

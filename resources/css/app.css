@@ -9,6 +9,18 @@
     font-family: "Montserrat", sans-serif;
 }
 
+.remove-blu{
+    border:none!important;
+    outline: none!important;
+    box-shadow: none!important;
+}
+
+.remove-blu:focus{
+    border:none!important;
+    outline: none!important;
+    box-shadow: none!important;
+} 
+
 .main-color-1 {
     color: rgb(0, 119, 130);
 }
