@@ -1,6 +1,6 @@
 <x-layouts.app>
     <main class="flex justify-center bg-slate-100 py-10">
-        <div class="p-4 rounded-lg bg-white w-1/3">
+        <div class="p-4 rounded-lg bg-white w-full md:w-1/3 ">
             <div class="flex justify-between w-full">
                 <div class="flex flex-col">
                     <h2>{{ $product->user->name }}</h2>

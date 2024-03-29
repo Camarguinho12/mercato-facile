@@ -35,6 +35,11 @@ return [
     "rifiuta" => "Rifiuta",
     "approvato" => "Annuncio approvato con successo",
     "rifiutato" => "Annuncio rifiutato con successo",
+    "adult" => "Adulto",
+    "medical" => "Sangue",
+    "spoof" => "Fasullo",
+    "violence" => "Violenza",
+    "racy" => "Razzismo",
 
     //Product show
     "fraseSostenibilita" => "Quando acquisti articoli di seconda mano risparmi denaro e aiuti il pianeta",

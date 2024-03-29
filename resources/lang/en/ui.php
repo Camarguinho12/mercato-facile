@@ -32,6 +32,11 @@ return [
     "rifiuta" => "Refuse",
     "approvato" => "Ad successfully approved",
     "rifiutato" => "Ad successfully rejected",
+    "adult" => "Adult",
+    "medical" => "Medical",
+    "spoof" => "Spoof",
+    "violence" => "Violence",
+    "racy" => "Racy",
 
     //Product show
     "fraseSostenibilita" => "When you buy second hand items you save money and help the planet",

@@ -9,7 +9,7 @@
     </head>
     <body>
         
-        <div class="min-h-screen w-full flex flex-col items-center justify-center bg-gradient-to-tr from-emerald-500 to-emerald-200">
+        <div class="min-h-screen w-full flex flex-col items-center justify-center bg-gradient-to-tr from-emerald-500 to-emerald-200 p-3">
         
             <form action="{{route('login')}}" method="POST" class="zoom-in flex flex-col rounded-3xl bg-white p-8 w-full sm:w-[420px]">
                 @csrf
@@ -23,7 +23,7 @@
 
                 <div class="relative flex flex-col my-8">
                     <input type="email" name="email" id="email" value="{{old('email')}}" class="peer h-12 w-full px-2 border-2 rounded border-gray-300 placeholder-transparent focus:outline-none focus:border-emerald-400 @error('email') border-red-600 focus:border-red-300 @enderror" placeholder=" ">
-                    <label for="email" class="absolute left-2 -top-3.5 text-gray-600 text-xs peer-placeholder-shown:text-base peer-placeholder-shown:top-2.5 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-emerald-500 transition-all @error('email') peer-focus:text-red-400 @enderror">{{__('ui.email')}}</label>
+                    <label for="email" class="absolute left-2 -top-3.5 text-gray-600 text-xs peer-placeholder-shown:text-base peer-placeholder-shown:top-2.5 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-emerald-500 transition-all @error('email') peer-focus:text-red-400 @enderror">{{__('ui.email')}}</label>
                 
                     @error('email')
                         <span class="text-red-500">{{$message}}</span>
@@ -32,7 +32,7 @@
 
                 <div class="relative flex flex-col mb-8">
                     <input type="password" name="password" id="password" class="peer h-12 w-full px-2 border-2 rounded border-gray-300 placeholder-transparent focus:outline-none focus:border-emerald-400 @error('password') border-red-600 focus:border-red-300 @enderror" placeholder=" ">
-                    <label for="password" class="absolute left-2 -top-3.5 text-gray-600 text-xs peer-placeholder-shown:text-base peer-placeholder-shown:top-2.5 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-emerald-500 transition-all @error('password') peer-focus:text-red-400 @enderror">{{__('ui.password')}}</label>
+                    <label for="password" class="absolute left-2 -top-3.5 text-gray-600 text-xs peer-placeholder-shown:text-base peer-placeholder-shown:top-2.5 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-emerald-500 transition-all @error('password') peer-focus:text-red-400 @enderror">{{__('ui.password')}}</label>
                 
                     @error('password')
                         <span class="text-red-500">{{$message}}</span>

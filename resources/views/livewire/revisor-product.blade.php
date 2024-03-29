@@ -12,11 +12,35 @@
                         </div>
 
                         <div class="flex justify-center my-6">
-                            <span class="{{ $image->adult }} mx-2"></span>
-                            <span class="{{ $image->medical }} mx-2"></span>
-                            <span class="{{ $image->spoof }} mx-2"></span>
-                            <span class="{{ $image->violence }}  mx-2"></span>
-                            <span class="{{ $image->racy }} mx-2"></span>
+                            <span data-tooltip-target="{{'adult' . $image->id}}" class="{{ $image->adult }} mx-2"></span>
+                            <div id="{{'adult' . $image->id}}" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                {{__('ui.adult')}}
+                                <div class="tooltip-arrow" data-popper-arrow></div>
+                            </div>
+
+                            <span data-tooltip-target="{{'medical' . $image->id}}" class="{{ $image->medical }} mx-2"></span>
+                            <div id="{{'medical' . $image->id}}" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                {{__('ui.medical')}}
+                                <div class="tooltip-arrow" data-popper-arrow></div>
+                            </div>
+
+                            <span data-tooltip-target="{{'spoof' . $image->id}}" class="{{ $image->spoof }} mx-2"></span>
+                            <div id="{{'spoof' . $image->id}}" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                {{__('ui.spoof')}}
+                                <div class="tooltip-arrow" data-popper-arrow></div>
+                            </div>
+
+                            <span data-tooltip-target="{{'violence' . $image->id}}" class="{{ $image->violence }}  mx-2"></span>
+                            <div id="{{'violence' . $image->id}}" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                {{__('ui.violence')}}
+                                <div class="tooltip-arrow" data-popper-arrow></div>
+                            </div>
+
+                            <span data-tooltip-target="{{'racy' . $image->id}}" class="{{ $image->racy }} mx-2"></span>
+                            <div id="{{'racy' . $image->id}}" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                {{__('ui.racy')}}
+                                <div class="tooltip-arrow" data-popper-arrow></div>
+                            </div>
                         </div>
                     @endif
                 @endfor    

@@ -7,11 +7,11 @@
         <div><x-language language="pt-br" nation="br"/></div>
     </div>
     <div class="flex p-6 gap-4 items-center">
-        <div class="hidden md:block">
-            <a href="{{ route('homepage') }}"><img src="{{ asset('images/logo.png') }}" class="rounded-lg w-auto max-h-16"></a>
+        <div class="block">
+            <a href="{{ route('homepage') }}"><img src="{{ asset('images/logo.png') }}" class="rounded-lg size-12 md:w-auto md:max-h-16"></a>
         </div>
         <livewire:search-bar />
-        <div class="text-white items-center flex">
+        <div class="text-white items-center hidden md:flex">
             @auth
                 <livewire:auth.logout />
             @endauth

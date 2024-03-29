@@ -5,7 +5,7 @@
             {{ $showMessage['message'] }}</p>
     @endif
     <h1 class="fade top text-center text-4xl my-10">{{__('ui.fraseHRevisore')}}</h1>
-    <div class="grid grid-cols-5 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
         @forelse ($products as $key=>$product)
             @if ($product->user_id != $user->id)
                 <livewire:revisor-product wire:key="{{ $product->id }}" :product='$product' :images='$images'/>

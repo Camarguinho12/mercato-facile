@@ -32,6 +32,11 @@ return [
     "rifiuta" => "Rejeita",
     "approvato" => "Anúncio aprovado com sucesso",
     "rifiutato" => "Anúncio reprovado com sucesso",
+    "adult" => "Adulto",
+    "medical" => "Sangue",
+    "spoof" => "Falso",
+    "violence" => "Violencia",
+    "racy" => "Racismo",
 
     //Product show
     "fraseHCategoryShow" => "Todos os produtos desta categoria",

@@ -8,12 +8,12 @@
                 </a>
                 <span class="absolute opacity-0 text-sm ps-1 text-gray-700 top-1">{{__('ui.nuovoAnnuncio')}}</span>
             </li>
-            <li class="md:mb-10 relative"><i
+            {{-- <li class="md:mb-10 relative"><i
                     class="fa-solid fa-dollar-sign text-2xl md:p-2 hover:rotate-12 duration-300"></i><span
-                    class="absolute opacity-0 ps-1 text-sm text-gray-700 top-3">{{__('ui.vendite')}}</span></li>
-            <li class="md:mb-10 relative"><i
+                    class="absolute opacity-0 ps-1 text-sm text-gray-700 top-3">{{__('ui.vendite')}}</span></li> --}}
+            {{-- <li class="md:mb-10 relative"><i
                     class="fa-solid fa-tag size-8 ps-1 text-2xl hover:rotate-12 duration-300"></i><span
-                    class="absolute opacity-0 ps-1 text-sm text-gray-700 top-1">{{__('ui.acquisti')}}</span></li>
+                    class="absolute opacity-0 ps-1 text-sm text-gray-700 top-1">{{__('ui.acquisti')}}</span></li> --}}
             <li class="md:mb-10 relative">
                 <a wire:navigate href="{{ route('dashboard.stats') }}"><i
                         class="{{ request()->is('dashboard/statistiche') ? 'text-green-500' : '' }} fa-solid ps-1 size-8 fa-chart-simple text-2xl hover:rotate-12 duration-300"></i></a>
@@ -37,6 +37,9 @@
                 <span class="absolute opacity-0 text-sm ps-1 top-1">{{__('ui.leTueNotifiche')}}</span>
             </li>
 
+            <li class="md:mb-10 relative md:hidden">
+                <livewire:auth.logout />
+            </li>
             {{-- <li class="md:mb-10 relative text-yellow-500"><i
                     class="fa-solid fa-face-grin-stars ps-1 size-8 text-2xl hover:rotate-12 duration-300"></i><span
                     class="absolute opacity-0 text-sm ps-1 top-1 text-yellow-500">{{__('ui.abbonamentoPremium')}}</span></li> --}}
