@@ -2,7 +2,9 @@
 
 namespace App\Livewire;
 
+use App\Models\Image;
 use App\Models\Product;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 
@@ -12,10 +14,14 @@ class Revisor extends Component
 {
     public $products;
     public $showMessage;
+    public $images;
+    public $user;
 
     public function mount(){
         $this->products = $this->products = Product::whereNull('is_accepted')->orWhere('is_accepted', false)->get();
         $this->showMessage=['display'=>false,'messageIsPositive'=>true, 'message'=>null];
+        $this->images = Image::all();
+        $this->user = Auth::user();
     }
 
     public function toggleMessage(){

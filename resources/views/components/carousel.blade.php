@@ -4,7 +4,7 @@
         <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
              @foreach ($images as $image)
              <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                 <img src="{{Storage::url($image->path)}}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                 <img src="{{$image->getUrl(400, 300)}}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
              </div> 
              @endforeach
         </div>

@@ -4,26 +4,26 @@
             <div class="flex justify-between w-full">
                 <div class="flex flex-col">
                     <h2>{{ $product->user->name }}</h2>
-                    <div>
+                    {{-- <div>
                         <i class="fa-regular fa-star hover:text-yellow-300"></i>
                         <i class="fa-regular fa-star hover:text-yellow-300"></i>
                         <i class="fa-regular fa-star hover:text-yellow-300"></i>
                         <i class="fa-regular fa-star hover:text-yellow-300"></i>
                         <i class="fa-regular fa-star hover:text-yellow-300"></i>
-                    </div>
+                    </div> --}}
                 </div>
-                <div class="flex gap-4">
+                {{-- <div class="flex gap-4">
                     <button class="p-2 bg-slate-100 rounded-full w-24"><i
                             class="fa-regular fa-heart text-xl"></i></button>
-                    <button class="w-24 border border-emerald-300 rounded-full">Chat</button>
-                </div>
+                    <button class="w-24 border border-emerald-300 rounded-full py-2">Chat</button>
+                </div> --}}
             </div>
             @if ($product->images->count()>1)
                 <x-carousel :images="$product->images"/>
             @else
                 
                   {{-- src="{{!$product->images()->get()->isEmpty() ? $product->images()->first()->getUrl(400, 300) : 'http://picsum.photo/200'}}" alt="foto">  --}}
-                  <img class="rounded-lg hover:scale-110 duration-300" src="{{isset($product->images->first()->path) ? Storage::url($product->images->first()->path) : asset('images/product-placeholder.jpg') }}"
+                  <img class="rounded-lg hover:scale-110 duration-300 w-full" src="{{isset($product->images->first()->path) ? $product->images->first()->getUrl(400, 300) : asset('images/product-placeholder.jpg') }}"
                   alt="">
             @endif
             <span class="text-4xl">{{ $product->price }} €</span>

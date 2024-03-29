@@ -7,9 +7,11 @@ use Livewire\Component;
 class RevisorProduct extends Component
 {
     public $product;
+    public $images;
 
-    public function mount($product){
+    public function mount($product, $images){
         $this->product=$product;
+        $this->images = $images;
     }
 
     public function render()
