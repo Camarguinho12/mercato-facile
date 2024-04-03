@@ -47,11 +47,11 @@
             @endforeach()
         </div>
 
-        <div class="flex justify-between mt-2">
+        <div class="flex justify-between mt-2 mx-4">
             <span class="font-bold">{{ $product->price ?? 'esempio' }}</span>
             <p>{{ __('ui.' . $product->category->title) ?? 'esempio' }}</p>
         </div>
-        <h3 class="mt-2">{{ $product->object ?? 'esempio' }}</h3>
+        <h3 class="mt-2 mx-4">{{ $product->object ?? 'esempio' }}</h3>
     </a>
 
     <div class="flex">
